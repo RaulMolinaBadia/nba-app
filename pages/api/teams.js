@@ -2,22 +2,11 @@
 
 import axios from "axios";
 
-// const url = "https://www.balldontlie.io/api/v1/teams/14";
-export default function handler(res,req) {
-
-const options = {
-  method: 'GET',
-  url: 'https://free-nba.p.rapidapi.com/players',
-  params: {page: '0', per_page: '25'},
-  headers: {
-    'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434',
-    'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
-  }
-};
-
-axios.request(options).then(function (response) {
-	console.log(response.data);
-}).catch(function (error) {
-	console.error(error);
-});
+const url = "https://www.balldontlie.io/api/v1/teams";
+export default function handler(req, res) {
+    // res.status(200).json({ name: "John Doe" });
+    axios.get(url).then((response) => {
+        res.status(200).json(response.data);
+        console.log(response.data);
+    });
 }
