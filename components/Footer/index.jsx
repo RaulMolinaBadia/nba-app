@@ -3,9 +3,9 @@ import { FooterContainer } from './styles'
 
 const Footer = () => {
   return (
-    <footer>
-      <FooterContainer>a</FooterContainer>
-    </footer>
+    <FooterContainer>
+      <p> Copyright 2023 &copy; By: Yerai & Raul</p>
+    </FooterContainer>
   )
 }
 
