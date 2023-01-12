@@ -12,6 +12,7 @@ export default function Home() {
                 />
                 <link rel="icon" href="/Logo-NBA.png" />
             </Head>
+            <div>hola</div>
         </div>
     );
 }
