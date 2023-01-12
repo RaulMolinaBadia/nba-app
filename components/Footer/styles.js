@@ -2,9 +2,18 @@ import styled from '@emotion/styled'
 
 export const FooterContainer = styled.footer`
   background-color: #ffffff1f;
-  position: fixed;
+  display: flex;
   bottom: 0;
   width: 100vw;
+  height: 60px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+
+`
+
+export const hola = styled.img`
+  width: 63px;
   height: 50px;
-  padding-left: 10px
+  border-radius: 10
 `
