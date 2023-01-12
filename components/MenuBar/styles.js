@@ -9,20 +9,27 @@ export const MenuBarWrapper = styled.div`
 `
 
 export const TeamsFrame = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 10rem;
     margin: 0.25rem;
     text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
     color: black;
+    cursor: pointer;
 `
 export const NewsFrame = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 10rem;
     margin: 0.25rem;
-    text-align: center;
     font-size: 1.25rem;
     font-weight: bold;
     color: black;
+    cursor: pointer;
 `
 export const LogoFrame = styled.div`
     width: 10rem;
@@ -30,4 +37,8 @@ export const LogoFrame = styled.div`
     text-align: center;
     font-size: 1.25rem;
     color: black;
+`
+
+export const Button = styled.a`
+    margin: auto;
 `
