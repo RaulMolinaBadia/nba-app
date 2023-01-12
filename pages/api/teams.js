@@ -10,7 +10,7 @@ const options = {
   url: 'https://free-nba.p.rapidapi.com/players',
   params: {page: '0', per_page: '25'},
   headers: {
-    'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434',
+    'X-RapidAPI-Key': 'e8079d9059mshaf2885320dead3bp16650ejsne54672d3a921',
     'X-RapidAPI-Host': 'free-nba.p.rapidapi.com'
   }
 };
