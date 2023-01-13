@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { TeamSelectorContainer, Select } from './styles'
+import Router from 'next/router'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
-const TeamSelector = (props) => {
+const TeamSelector = props => {
   const [post, setPost] = useState(null)
 
   useEffect(() => {
@@ -19,11 +20,15 @@ const TeamSelector = (props) => {
     <TeamSelectorContainer>
       {post
         ? (
-          <Select onChange={(e) => { props.setTeamName(e.target.value) }} id='teams'>
+          <Select
+            onChange={e => {
+              props.setTeamName(e.target.value)
+              Router.push('/home')
+            }}
+            id='teams'
+          >
             {post.map((team, i) => (
-              <option key={i}>
-                {team.full_name}
-              </option>
+              <option key={i}>{team.full_name}</option>
             ))}
           </Select>
           )
