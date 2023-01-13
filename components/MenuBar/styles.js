@@ -4,6 +4,7 @@ export const MenuBarWrapper = styled.div`
     display: flex;
     flex-direction: row;
     width: 40rem;
+    align-items: right;
     justify-content: space-between;
     background-color: #A9A9A9;
 `
@@ -15,7 +16,6 @@ export const TeamsFrame = styled.div`
     width: 10rem;
     margin: 0.25rem;
     text-align: center;
-    font-size: 1.25rem;
     font-weight: bold;
     color: black;
     cursor: pointer;
@@ -26,7 +26,6 @@ export const NewsFrame = styled.div`
     justify-content: center;
     width: 10rem;
     margin: 0.25rem;
-    font-size: 1.25rem;
     font-weight: bold;
     color: black;
     cursor: pointer;
@@ -35,8 +34,11 @@ export const LogoFrame = styled.div`
     width: 10rem;
     margin: 0.25rem;
     text-align: center;
-    font-size: 1.25rem;
     color: black;
+`
+export const Logo = styled.img`
+    width: 3rem;
+    height: 3rem;
 `
 
 export const Button = styled.a`

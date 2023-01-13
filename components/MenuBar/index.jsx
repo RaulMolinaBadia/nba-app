@@ -1,19 +1,18 @@
-import { MenuBarWrapper, TeamsFrame, NewsFrame, LogoFrame } from './styles'
+import { MenuBarWrapper, TeamsFrame, NewsFrame, LogoFrame, Logo } from './styles'
 import Link from 'next/link'
 import TeamsList from '../../public/nbaLogos'
-
 const MenuBar = (props) => {
-  const teamLogo = TeamsList.find(team => team.team === props.teamName).logo
+  const teamLogo = TeamsList.find((team) => team.name === props.teamName)
   return (
     <MenuBarWrapper>
       <TeamsFrame>
-        <Link href='/'>Teams</Link>
+        <Link href='/teams'>Teams</Link>
       </TeamsFrame>
       <NewsFrame>
-        <Link href='/'>News</Link>
+        <Link href='/news'>News</Link>
       </NewsFrame>
       <LogoFrame>
-        <img src={teamLogo} alt='team logo' />
+        <Logo src={`${teamLogo.logo.src}`} alt='team logo' />
       </LogoFrame>
     </MenuBarWrapper>
   )
