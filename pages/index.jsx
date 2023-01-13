@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import TeamSelector from '../components/TeamSelector'
 import MenuBar from '../components/MenuBar/index'
-import { NavBar } from '../styles/LandingPage'
+import { NavBar } from '../styles/pages/LandingPage'
 import { useState } from 'react'
 
 export default function Home () {
