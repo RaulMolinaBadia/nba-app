@@ -1,5 +1,14 @@
 import styled from '@emotion/styled'
 export const TeamSelectorContainer = styled.div`
-  display: flex;
-  gap: 1rem;
+    width: 100%;
+    height: 93vh;
+    background-color: #ffffff14;
+    display: flex;
+    flex-direction: column;
+    alig-items: center
+
+`
+
+export const Select = styled.select`
+  width: 180px;
 `

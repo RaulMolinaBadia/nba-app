@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
-import { TeamSelectorContainer } from './styles'
+import { TeamSelectorContainer, Select } from './styles'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -19,15 +19,13 @@ const TeamSelector = (props) => {
     <TeamSelectorContainer>
       {post
         ? (
-          <>
-            <select onChange={(e) => { props.setTeamName(e.target.value) }} id='teams'>
-              {post.map((team, i) => (
-                <option key={i}>
-                  {team.full_name}
-                </option>
-              ))}
-            </select>
-          </>
+          <Select onChange={(e) => { props.setTeamName(e.target.value) }} id='teams'>
+            {post.map((team, i) => (
+              <option key={i}>
+                {team.full_name}
+              </option>
+            ))}
+          </Select>
           )
         : (
           <div>Loading...</div>
