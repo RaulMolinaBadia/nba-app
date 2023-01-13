@@ -15,7 +15,6 @@ export default function Home () {
       </Head>
       <MenuBar teamName='Bulls' />
       <TeamListBar />
-
     </div>
   )
 }
