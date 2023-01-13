@@ -3,7 +3,7 @@ import Image from 'next/image'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/LandingPage'
 
-export default function Home () {
+export default function LandingPage () {
   return (
     <div>
       <Head>
