@@ -5,7 +5,7 @@ export const GeneralFrame = styled.div`
     flex-direction: column;
     width: 75rem;
     height: 28rem;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     background-color: white;
     `
 export const FrameWrapper = styled.div`
