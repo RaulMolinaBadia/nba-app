@@ -2,9 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/LandingPage'
-import TeamListBar from '../components/TeamListBar'
 
-export default function Home () {
+export default function LandingPage () {
   return (
     <div>
       <Head>
@@ -19,7 +18,6 @@ export default function Home () {
         <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' />
         <MenuBar teamName='Bulls' />
       </NavBar>
-      <TeamListBar />
     </div>
   )
 }
