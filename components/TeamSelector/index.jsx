@@ -1,40 +1,23 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
 import { TeamSelectorContainer, Select } from './styles'
 import Router from 'next/router'
 
-const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
+const TeamSelector = (props) => {
+  const teams = props.teams.teams.data
 
-const TeamSelector = props => {
-  const [post, setPost] = useState(null)
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      axios.get(teamsURL).then(response => {
-        setPost(response.data.data)
-      })
-    }, 1000)
-    return () => clearInterval(intervalId)
-  }, [teamsURL])
   return (
     <TeamSelectorContainer>
-      {post
-        ? (
-          <Select
-            onChange={e => {
-              props.setTeamName(e.target.value)
-              Router.push('/home')
-            }}
-            id='teams'
-          >
-            {post.map((team, i) => (
-              <option key={i}>{team.full_name}</option>
-            ))}
-          </Select>
-          )
-        : (
-          <div>Loading...</div>
-          )}
+      <Select
+        onChange={e => {
+          props.setTeamName(e.target.value)
+          Router.push('/home')
+        }}
+        id='teams'
+      >
+        {teams.map((team, i) => (
+          <option key={i}>{team.full_name}</option>
+        ))}
+      </Select>
+
     </TeamSelectorContainer>
   )
 }

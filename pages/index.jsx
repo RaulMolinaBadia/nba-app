@@ -6,9 +6,10 @@ import { NavBar } from '../styles/pages/LandingPage'
 import { useState } from 'react'
 import Link from 'next/link'
 
-export default function Home () {
-  const [teamName, setTeamName] = useState('Hawks')
+const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
+export default function Home (teams) {
+  const [teamName, setTeamName] = useState('Hawks')
   return (
     <div>
       <Head>
@@ -27,7 +28,17 @@ export default function Home () {
         </Link>
         <MenuBar teamName={teamName} />
       </NavBar>
-      <TeamSelector setTeamName={setTeamName} />
+      <TeamSelector setTeamName={setTeamName} teams={teams} />
     </div>
   )
+}
+
+export async function getServerSideProps () {
+  const response = await fetch(teamsURL)
+  const teams = await response.json()
+  return {
+    props: {
+      teams
+    }
+  }
 }
