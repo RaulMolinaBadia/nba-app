@@ -3,14 +3,14 @@ import styled from '@emotion/styled'
 export const TeamListBarWrapper = styled.div`
     display: flex;
     flex-direction: row;
-    gap: 2.65rem;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 10px;
+    padding: 0 0.625rem;
+    padding-top: 1.5rem;
     height: 3.125rem;
 `
 
 export const Logo = styled.img`
-    position: fixed;
     width: 1.75rem;
     height: 1.75rem;
     :hover {

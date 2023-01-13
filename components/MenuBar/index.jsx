@@ -1,6 +1,7 @@
 import { MenuBarWrapper, TeamsFrame, NewsFrame, LogoFrame, Logo } from './styles'
 import Link from 'next/link'
 import TeamsList from '../../public/nbaLogos'
+
 const MenuBar = (props) => {
   const teamLogo = TeamsList.find((team) => team.name === props.teamName)
   return (

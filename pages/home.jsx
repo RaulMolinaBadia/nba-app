@@ -3,6 +3,7 @@ import Image from 'next/image'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/LandingPage'
 import TeamListBar from '../components/TeamListBar'
+import Frame from '../components/Frame'
 
 export default function Home () {
   return (
@@ -20,6 +21,7 @@ export default function Home () {
         <MenuBar teamName='Bulls' />
       </NavBar>
       <TeamListBar />
+      <Frame />
     </div>
   )
 }
