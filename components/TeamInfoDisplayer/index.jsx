@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Teams, TeamInfo } from './styles'
+import TeamsList from '../../public/nbaLogos'
 
 const TeamInfoDisplayer = () => {
   const [teamsData, setTeamsData] = useState([])
@@ -12,14 +13,18 @@ const TeamInfoDisplayer = () => {
 
   return (
     <Teams>
-      {teamsData.map((team, i) => (
-        <TeamInfo key={i}>
-          <div>{team.full_name}</div>
-          <div>{team.city}</div>
-          <div>{team.division}</div>
-          <div>{team.conference}</div>
-        </TeamInfo>
-      ))}
+      {teamsData.map((team, i) => {
+        const findTeam = TeamsList.find((t) => t.name === team.name)
+        return (
+          <TeamInfo key={i}>
+            {findTeam ? <img src={findTeam.logo.src} alt={team.name} /> : null}
+            <div>{team.full_name}</div>
+            <div>{team.city} 📍</div>
+            <div>Divsion: {team.division}</div>
+            <div>Conference: {team.conference}</div>
+          </TeamInfo>
+        )
+      })}
     </Teams>
   )
 }
