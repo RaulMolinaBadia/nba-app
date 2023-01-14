@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import TeamSelector from '../components/TeamSelector'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/pages/LandingPage'
 import { useState } from 'react'
-import Link from 'next/link'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -19,14 +19,9 @@ export default function Home (teams) {
       </Head>
       <NavBar>
         <Link href='/home'>
-          <Image
-            src='/app-logo/Logo-NBA.png'
-            width={100}
-            height={57}
-            alt='logoNBA'
-          />
+          <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
-        <MenuBar teamName={teamName} />
+        <MenuBar teamName='Bulls' />
       </NavBar>
       <TeamSelector setTeamName={setTeamName} teams={teams} />
     </div>

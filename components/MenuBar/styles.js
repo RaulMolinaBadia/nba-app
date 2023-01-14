@@ -4,7 +4,6 @@ export const MenuBarWrapper = styled.div`
     display: flex;
     flex-direction: row;
     width: 40rem;
-    align-items: right;
     justify-content: space-between;
     background-color: #A9A9A9;
 `
