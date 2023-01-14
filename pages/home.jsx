@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import MenuBar from '../components/MenuBar/index'
-import { NavBar } from '../styles/LandingPage'
+import { NavBar } from '../styles/pages/LandingPage'
 import TeamListBar from '../components/TeamListBar'
 
 export default function Home () {
