@@ -18,7 +18,7 @@ export default function Home () {
       </Head>
       <NavBar>
         <Link href='/'>
-          <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' />
+          <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
         <MenuBar teamName='Bulls' />
       </NavBar>

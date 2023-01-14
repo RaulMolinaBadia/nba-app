@@ -17,7 +17,7 @@ export default function LandingPage () {
       </Head>
       <NavBar>
         <Link href='/home'>
-          <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' />
+          <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
         <MenuBar teamName='Bulls' />
       </NavBar>
