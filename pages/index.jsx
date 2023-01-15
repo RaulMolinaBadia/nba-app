@@ -21,7 +21,7 @@ export default function Home (teams) {
         <Link href='/home'>
           <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
-        <MenuBar teamName='Bulls' />
+        <MenuBar teamName={teamName} />
       </NavBar>
       <TeamSelector setTeamName={setTeamName} teams={teams} />
     </div>

@@ -14,7 +14,7 @@ const MenuBar = (props) => {
         <Link href='/news'>News</Link>
       </NewsFrame>
       <LogoFrame>
-        <Logo src={teamLogo.logo.src} alt='team logo' />
+        <Logo src={`${teamLogo.logo.src}`} alt='team logo' />
       </LogoFrame>
     </MenuBarWrapper>
   )
