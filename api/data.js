@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react'
-import axios from 'axios'
 
 export const useDataAPI = apiURL => {
-  const [post, setPost] = useState(null)
+  const [post, setPost] = useState([])
 
   useEffect(() => {
-    axios.get(apiURL).then(response => {
-      setPost(response.data.data)
-      // console.log(post)
-    })
-  }, [apiURL])
+    fetch(apiURL)
+      .then((response) => response.json())
+      .then((data) => {
+        setPost(data.data)
+      })
+  }, [])
 
   return post
 }

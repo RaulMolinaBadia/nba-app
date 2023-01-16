@@ -24,7 +24,9 @@ export default function Home () {
         <MenuBar teamName='Logo-NBA' />
       </NavBar>
       <TeamListBar />
-      <Frame />
+      <Frame
+        teamName='NEWS'
+      />
     </div>
   )
 }
