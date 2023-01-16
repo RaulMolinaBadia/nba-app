@@ -1,11 +1,16 @@
+import { useRouter } from 'next/router'
+
 import Head from 'next/head'
 import Image from 'next/image'
-import MenuBar from '../components/MenuBar/index'
-import { NavBar } from '../styles/pages/LandingPage'
-import TeamListBar from '../components/TeamListBar'
+import MenuBar from '../../components/MenuBar/index'
+import { NavBar } from '../../styles/pages/LandingPage'
+import TeamListBar from '../../components/TeamListBar'
 import Link from 'next/link'
 
-export default function Home () {
+export default function Home ({ id }) {
+  const router = useRouter()
+  const { query } = router
+  const teamSplited = (query.id).split(' ')
   return (
     <div>
       <Head>
@@ -20,9 +25,13 @@ export default function Home () {
         <Link href='/'>
           <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
-        <MenuBar teamName='Logo-NBA' />
+        <MenuBar teamName={teamSplited[teamSplited.length - 1]} />
       </NavBar>
       <TeamListBar />
     </div>
   )
+}
+
+Home.getInitialProps = async ({ query }) => {
+  return { id: query.id }
 }
