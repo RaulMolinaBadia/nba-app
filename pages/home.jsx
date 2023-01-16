@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/pages/LandingPage'
 import TeamListBar from '../components/TeamListBar'
-import Link from 'next/link'
+import Frame from '../components/Frame'
 
 export default function Home () {
   return (
@@ -23,6 +24,7 @@ export default function Home () {
         <MenuBar teamName='Logo-NBA' />
       </NavBar>
       <TeamListBar />
+      <Frame />
     </div>
   )
 }
