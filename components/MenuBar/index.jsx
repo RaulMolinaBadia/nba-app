@@ -3,7 +3,9 @@ import Link from 'next/link'
 import TeamsList from '../../public/nbaLogos'
 
 const MenuBar = (props) => {
-  const teamLogo = TeamsList.find((team) => team.name === props.teamName)
+  const teamName = props.teamName.split(' ')
+  const teamLogo = TeamsList.find((team) => team.name === teamName[teamName.length - 1])
+
   return (
     <MenuBarWrapper>
       <TeamsFrame>
