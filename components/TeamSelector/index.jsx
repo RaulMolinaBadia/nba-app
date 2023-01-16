@@ -10,7 +10,7 @@ const TeamSelector = (props) => {
       <Select
         onChange={e => {
           props.setTeamName(e.target.value)
-          Router.push('/home')
+          Router.push(`/home/${e.target.value}`)
         }}
         id='teams'
       >

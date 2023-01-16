@@ -35,10 +35,6 @@ export const LogoFrame = styled.div`
     text-align: center;
     color: black;
 `
-export const Logo = styled.img`
-    width: 3rem;
-    height: 3rem;
-`
 
 export const Button = styled.a`
     margin: auto;
