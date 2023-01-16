@@ -1,24 +1,20 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Teams, TeamInfo } from './styles'
 import TeamsList from '../../public/nbaLogos'
 import Link from 'next/link'
 
-const TeamInfoDisplayer = () => {
-  const [teamsData, setTeamsData] = useState([])
-
-  useEffect(() => {
-    fetch('https://www.balldontlie.io/api/v1/teams')
-      .then(response => response.json())
-      .then(data => setTeamsData(data.data))
-  }, [])
+const TeamInfoDisplayer = (props) => {
+  const teams = props.teams.teams.data
 
   return (
     <Teams>
-      {teamsData.map((team, i) => {
-        const findTeam = TeamsList.find((t) => t.name === team.name)
+      {teams.map((team, i) => {
+        const teamName = teams[i].name.split(' ')
+        console.log(teamName[teamName.length - 1])
+        const findTeam = TeamsList.find((t) => t.name === teamName[teamName.length - 1])
         return (
           <TeamInfo key={i}>
-            <Link href={`/teams/${team.name}`}>
+            <Link href={`/teams/${team}`}>
               {findTeam ? <img src={findTeam.logo.src} alt={team.name} /> : null}
             </Link>
             <div>{team.full_name}</div>

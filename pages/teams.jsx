@@ -5,7 +5,9 @@ import MenuBar from '../components/MenuBar'
 import Link from 'next/link'
 import Image from 'next/image'
 
-const teams = () => {
+const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
+
+const Teams = (teams) => {
   return (
     <div>
       <NavBar>
@@ -19,8 +21,18 @@ const teams = () => {
         </Link>
         <MenuBar teamName='Blazers' />
       </NavBar>
-      <TeamInfoDisplayer />
+      <TeamInfoDisplayer teams={teams} />
     </div>
   )
 }
-export default teams
+export default Teams
+
+export async function getServerSideProps () {
+  const response = await fetch(teamsURL)
+  const teams = await response.json()
+  return {
+    props: {
+      teams
+    }
+  }
+}
