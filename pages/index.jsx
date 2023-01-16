@@ -8,7 +8,7 @@ import { useState } from 'react'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
-export default function Home (teams) {
+export default function LandingPage (teams) {
   const [teamName, setTeamName] = useState('Hawks')
   return (
     <div>
