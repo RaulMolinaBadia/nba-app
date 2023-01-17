@@ -10,6 +10,7 @@ import {
 import { Header, Logo, TeamName } from './propStyles'
 import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
 import Link from 'next/link'
+import Images from 'next/image'
 import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
 
 const Frame = props => {
@@ -17,7 +18,7 @@ const Frame = props => {
   return (
     <GeneralFrame>
       <Header>
-        {props.teamName === 'NEWS' ? <NBALogo src='/app-logo/Logo-NBA.png' /> : <Logo src={props.teamLogo} width={70} height={70} alt='team logo' />}
+        {props.teamName === 'NEWS' ? <Images src='/app-logo/Logo-NBA.png' width={70} height={70} alt='team logo' /> : <Images src={props.teamLogo} width={70} height={70} alt='team logo' />}
         <TeamName>{props.teamName}</TeamName>
       </Header>
       <FrameWrapper>
