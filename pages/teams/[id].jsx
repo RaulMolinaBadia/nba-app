@@ -10,8 +10,8 @@ import TeamsList from '../../public/nbaLogos'
 export default function DynamicPage ({ id }) {
   const router = useRouter()
   const { query } = router
+  const teamSplited = (query.id).split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
-  console.log(findTeam)
   return (
     <div>
       <h1 />
@@ -19,7 +19,7 @@ export default function DynamicPage ({ id }) {
         <Link href='/'>
           <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
-        <MenuBar teamName='Logo-NBA' />
+        <MenuBar teamName={teamSplited[teamSplited.length - 1]} />
       </NavBar>
       <TeamListBar />
       <Frame

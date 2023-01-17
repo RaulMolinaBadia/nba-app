@@ -1,16 +1,27 @@
 import styled from '@emotion/styled'
 
+export const Leaderboard = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    `
+
 export const ConferenceHeader = styled.h1`
     font-size: 1.5rem;
     margin-left: 2rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
+    `
+export const Teams = styled.div`
+    display: flex;
+    flex-direction: column;
     `
 
 export const TeamContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    padding: 1rem;
+    padding: 0.5rem;
     `
 
 export const Logo = styled.img`
@@ -19,6 +30,20 @@ export const Logo = styled.img`
     `
 
 export const TeamName = styled.h1`
-margin-left: 1rem;
+    margin-left: 1rem;
     font-size: 0.75rem;
+    `
+export const Scoreboard = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    `
+export const Record = styled.div`
+    font-size: 1.25rem;
+    margin-bottom: 1.3rem; 
+    `
+
+export const Position = styled.div`
+    font-size: 1.25rem;
+    margin-right: 0.6rem;
     `
