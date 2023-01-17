@@ -10,7 +10,7 @@ import {
 import { Header, Logo, TeamName } from './propStyles'
 import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
 import Link from 'next/link'
-// import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
+import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
 
 const Frame = props => {
   console.log(props)
@@ -22,8 +22,7 @@ const Frame = props => {
       </Header>
       <FrameWrapper>
         <LeftFrame>
-          {/* <EasternLeaderboard /> */}
-          <WesternLeaderboard />
+          <EasternLeaderboard />
         </LeftFrame>
         <MidFrame>
           {props.news.map((newsItem, i) => (
@@ -38,7 +37,9 @@ const Frame = props => {
             </div>
           ))}
         </MidFrame>
-        <RightFrame />
+        <RightFrame>
+          <WesternLeaderboard />
+        </RightFrame>
       </FrameWrapper>
     </GeneralFrame>
   )

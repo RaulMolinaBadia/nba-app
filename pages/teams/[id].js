@@ -25,6 +25,8 @@ export default function DynamicPage ({ id }) {
       <Frame
         teamLogo={findTeam.logo.src}
         teamName={query.id}
+        news={[]}
+        imagesUrls={[]}
       />
     </div>
   )
