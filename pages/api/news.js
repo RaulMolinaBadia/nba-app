@@ -1,16 +1,9 @@
 import axios from 'axios'
 
-const options = {
-  method: 'GET',
-  url: 'https://nba-latest-news.p.rapidapi.com/articles',
-  headers: {
-    'X-RapidAPI-Key': 'e8079d9059mshaf2885320dead3bp16650ejsne54672d3a921',
-    'X-RapidAPI-Host': 'nba-latest-news.p.rapidapi.com'
-  }
-}
+const urlPlayers = 'https://www.balldontlie.io/api/v1/players'
 
-export default function handlerNews (req, res) {
-  axios.get(options.url, options.headers).then(response => {
+export default function handlerTeam (req, res) {
+  axios.get(urlPlayers).then(response => {
     res.status(200).json(response.data)
   })
 }

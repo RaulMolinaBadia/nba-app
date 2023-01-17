@@ -7,7 +7,7 @@ import {
   RightFrame,
   ImageNews
 } from './styles'
-import { Header, Logo, TeamName } from './propStyles'
+import { Header, TeamName } from './propStyles'
 import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
 import Link from 'next/link'
 import Images from 'next/image'
