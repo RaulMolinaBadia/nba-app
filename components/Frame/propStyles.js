@@ -13,7 +13,7 @@ export const Header = styled.div`
 export const Logo = styled.img`
     width: 5rem;
     height: 5rem;
-    margin-right: 1.25rem;
+    margin-right: 2rem;
     `
 
 export const TeamName = styled.div`
