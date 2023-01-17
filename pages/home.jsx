@@ -24,7 +24,6 @@ export default function Home () {
         <MenuBar teamName='Logo-NBA' />
       </NavBar>
       <TeamListBar />
-      <Frame />
     </div>
   )
 }

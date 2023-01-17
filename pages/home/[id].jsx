@@ -7,7 +7,7 @@ import { NavBar } from '../../styles/pages/LandingPage'
 import TeamListBar from '../../components/TeamListBar'
 import Link from 'next/link'
 
-export default function Home ({ id }) {
+export default function News ({ id }) {
   const router = useRouter()
   const { query } = router
   const teamSplited = (query.id).split(' ')
@@ -32,6 +32,6 @@ export default function Home ({ id }) {
   )
 }
 
-Home.getInitialProps = async ({ query }) => {
+News.getInitialProps = async ({ query }) => {
   return { id: query.id }
 }

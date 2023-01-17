@@ -10,7 +10,6 @@ const TeamInfoDisplayer = (props) => {
     <Teams>
       {teams.map((team, i) => {
         const teamName = teams[i].name.split(' ')
-        console.log(teamName[teamName.length - 1])
         const findTeam = TeamsList.find((t) => t.name === teamName[teamName.length - 1])
         return (
           <TeamInfo key={i}>

@@ -10,7 +10,7 @@ const options = {
 }
 
 export default function handlerNews (req, res) {
-  axios.get(options.url).then(response => {
+  axios.get(options.url, options.headers).then(response => {
     res.status(200).json(response.data)
   })
 }
