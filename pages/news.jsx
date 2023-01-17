@@ -6,11 +6,9 @@ import cheerio from 'cheerio'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/pages/LandingPage'
 import TeamListBar from '../components/TeamListBar'
-// import Frame from '../components/Frame'
-import { Layout } from '../styles/pages/news'
+import Frame from '../components/Frame'
 
 export default function News (props) {
-  const news = props.news
   console.log(props)
   return (
     <div>
@@ -29,6 +27,11 @@ export default function News (props) {
         <MenuBar teamName='Logo-NBA' />
       </NavBar>
       <TeamListBar />
+      <Frame
+        teamName='NEWS'
+        news={props.news}
+        imagesUrls={props.imagesUrls}
+      />
     </div>
   )
 }
@@ -52,7 +55,7 @@ export async function getStaticProps () {
   const news = await response.json()
 
   const imagesUrls = []
-  const defaultImageUrl = '/path/to/default-image.jpg'
+  const defaultImageUrl = 'defaultImage.jpg'
   for (const newsItem of news) {
     const imageUrl = await getImageUrl(newsItem.url)
     if (imageUrl) {

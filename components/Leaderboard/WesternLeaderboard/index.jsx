@@ -7,14 +7,12 @@ const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
 const WesternLeaderboard = () => {
   const teamsData = useDataAPI(teamsURL)
-  console.log(teamsData)
   return (
     <div>
       <ConferenceHeader>WEST CONFERENCE</ConferenceHeader>
       {teamsData.map((team, i) => {
         if (team.conference === 'West') {
           const teamName = teamsData[i].name.split(' ')
-          console.log(teamName[teamName.length - 1])
           const findTeam = TeamsList.find((t) => t.name === teamName[teamName.length - 1])
           return (
             <TeamContainer key={i}>
