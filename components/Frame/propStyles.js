@@ -21,3 +21,8 @@ export const TeamName = styled.div`
     flex-direction: column;
     margin-top: 1rem;
     `
+
+export const NBALogo = styled.img`
+    width: 9rem;
+    height: 5rem;
+`
