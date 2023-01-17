@@ -1,7 +1,7 @@
 import React from 'react'
 import { GeneralFrame, FrameWrapper, LeftFrame, MidFrame, RightFrame } from './styles'
 import { Header, Logo, TeamName } from './propStyles'
-// import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
+import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
 // import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
 
 const Frame = (props) => {
@@ -14,7 +14,7 @@ const Frame = (props) => {
       <FrameWrapper>
         <LeftFrame>
           {/* <EasternLeaderboard /> */}
-          {/* <WesternLeaderboard /> */}
+          <WesternLeaderboard />
         </LeftFrame>
         <MidFrame />
         <RightFrame />

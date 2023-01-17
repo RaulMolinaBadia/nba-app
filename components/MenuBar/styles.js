@@ -6,6 +6,8 @@ export const MenuBarWrapper = styled.div`
     width: 40rem;
     justify-content: space-between;
     background-color: #A9A9A9;
+    border-radius: 0.5rem 0 0 0.5rem;
+    margin-bottom: 1rem;
 `
 
 export const TeamsFrame = styled.div`
@@ -16,7 +18,7 @@ export const TeamsFrame = styled.div`
     margin: 0.25rem;
     text-align: center;
     font-weight: bold;
-    color: black;
+    color: white;
     cursor: pointer;
 `
 export const NewsFrame = styled.div`
@@ -26,7 +28,7 @@ export const NewsFrame = styled.div`
     width: 10rem;
     margin: 0.25rem;
     font-weight: bold;
-    color: black;
+    color: white;
     cursor: pointer;
 `
 export const LogoFrame = styled.div`

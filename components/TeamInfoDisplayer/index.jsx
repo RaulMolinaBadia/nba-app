@@ -13,7 +13,7 @@ const TeamInfoDisplayer = (props) => {
         const findTeam = TeamsList.find((t) => t.name === teamName[teamName.length - 1])
         return (
           <TeamInfo key={i}>
-            <Link href={`/teams/${team}`}>
+            <Link href={`/teams/${teamName}`}>
               {findTeam ? <img src={findTeam.logo.src} alt={team.name} /> : null}
             </Link>
             <div>{team.full_name}</div>
