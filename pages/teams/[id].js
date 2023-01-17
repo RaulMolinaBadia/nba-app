@@ -5,10 +5,13 @@ import { NavBar } from '../../styles/pages/LandingPage'
 import MenuBar from '../../components/MenuBar/index'
 import TeamListBar from '../../components/TeamListBar'
 import Frame from '../../components/Frame'
+import TeamsList from '../../public/nbaLogos'
 
 export default function DynamicPage ({ id }) {
   const router = useRouter()
   const { query } = router
+  const findTeam = TeamsList.find(team => team.name === query.id)
+  console.log(findTeam)
   return (
     <div>
       <h1 />
@@ -20,7 +23,8 @@ export default function DynamicPage ({ id }) {
       </NavBar>
       <TeamListBar />
       <Frame
-        teamName='Logo-NBA'
+        teamLogo={findTeam.logo.src}
+        teamName={query.id}
       />
     </div>
   )

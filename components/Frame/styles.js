@@ -13,7 +13,7 @@ export const FrameWrapper = styled.div`
     display: flex;
     flex-direction: row;
     width: 110rem;
-    height: 45rem;
+    height: 37.5rem;
     background-color: lightgray;
     margin-top: 5rem;
     justify-content: space-between;
@@ -21,7 +21,7 @@ export const FrameWrapper = styled.div`
 export const LeftFrame = styled.div`
     background-color: white;
     width: 20rem;
-    height: 36.5rem;
+    height: 35rem;
     margin: 2rem;
     margin-left: 2rem;
     color: black;
@@ -30,7 +30,7 @@ export const LeftFrame = styled.div`
 export const MidFrame = styled.div`
     background-color: white;
     width: 60rem;
-    height: 36.5rem;
+    height: 35rem;
     margin: 2rem;
     margin-left: 2rem;
     color: black;
@@ -39,7 +39,7 @@ export const MidFrame = styled.div`
 export const RightFrame = styled.div`
     background-color: white;
     width: 20rem;
-    height: 36.5rem;
+    height: 35rem;
     margin: 2rem;
     margin-right: 2rem;
     color: black;
