@@ -18,9 +18,9 @@ const TeamInfoDisplayer = (props) => {
               {findTeam ? <img src={findTeam.logo.src} alt={team.name} /> : null}
             </Link>
             <div>{team.full_name}</div>
-            <div>{team.city} 📍</div>
             <div>Divsion: {team.division}</div>
             <div>Conference: {team.conference}</div>
+            <div>{team.city} 📍</div>
           </TeamInfo>
         )
       })}
