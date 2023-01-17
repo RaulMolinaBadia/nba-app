@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import axios from 'axios'
+import cheerio from 'cheerio'
 import MenuBar from '../components/MenuBar/index'
 import { NavBar } from '../styles/pages/LandingPage'
 import TeamListBar from '../components/TeamListBar'
@@ -27,28 +29,17 @@ export default function News (props) {
         <MenuBar teamName='Logo-NBA' />
       </NavBar>
       <TeamListBar />
-      {news.map((el, i) => {
-        return (
-          <Layout key={i}>
-            <h1>{el.title}</h1>
-          </Layout>
-        )
-      })}
     </div>
   )
 }
 
-// export async function getStaticProps () {
-//   const { data } = await axios.get('https://www.hispanosnba.com/equipos/atlanta-hawks/plantilla')
-//   const $ = cheerio.load(data)
-//   const html = $('.tblsaleq').text()
-//   return {
-//     props: { html },
-//     revalidate: 10 // rerun after 10 seconds
-//   }
-// }
+async function getImageUrl (url) {
+  const { data } = await axios.get(url)
+  const $ = cheerio.load(data)
+  return $('.ArticleContent_article__NBhQ8 img').attr('src')
+}
 
-export async function getServerSideProps () {
+export async function getStaticProps () {
   const headersList = {
     Accept: '*/*',
     'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
@@ -59,10 +50,20 @@ export async function getServerSideProps () {
     headers: headersList
   })
   const news = await response.json()
-  console.log(news)
-  return {
-    props: {
-      news
+
+  const imagesUrls = []
+  const defaultImageUrl = '/path/to/default-image.jpg'
+  for (const newsItem of news) {
+    const imageUrl = await getImageUrl(newsItem.url)
+    if (imageUrl) {
+      imagesUrls.push(imageUrl)
+    } else {
+      imagesUrls.push(defaultImageUrl)
     }
+  }
+
+  return {
+    props: { news, imagesUrls },
+    revalidate: 10 // rerun after 10 seconds
   }
 }

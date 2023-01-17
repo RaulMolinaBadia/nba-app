@@ -1,15 +1,28 @@
 import React from 'react'
 import cheerio from 'cheerio'
 import axios from 'axios'
-import { useDataAPI } from '../api/data'
+import Image from 'next/image'
 const prueba = (props) => {
   console.log(props)
-  //   const a = useDataAPI()
   return (
     <div>
+      {
+        props.news.map((newsItem, i) => (
+          <div key={i}>
+            <h1>{newsItem.title}</h1>
+            <Image src={props.imagesUrls[i]} width={800} height={700} alt='newsImages' />
+          </div>
+        ))
+        }
       <img src={props.html} />
     </div>
   )
+}
+
+async function getImageUrl (url) {
+  const { data } = await axios.get(url)
+  const $ = cheerio.load(data)
+  return $('.ArticleContent_article__NBhQ8 img').attr('src')
 }
 
 export async function getStaticProps () {
@@ -24,12 +37,21 @@ export async function getStaticProps () {
   })
   const news = await response.json()
 
-  const { data } = await axios.get('https://www.nba.com/news/lebron-james-scoring-tracker')
-  const $ = cheerio.load(data)
-  const html = $('.ArticleContent_article__NBhQ8 img').attr('src')
+  const imagesUrls = []
+  const defaultImageUrl = '/path/to/default-image.jpg'
+  for (const newsItem of news) {
+    const imageUrl = await getImageUrl(newsItem.url)
+    if (imageUrl) {
+      imagesUrls.push(imageUrl)
+    } else {
+      imagesUrls.push(defaultImageUrl)
+    }
+  }
+
   return {
-    props: { html, news },
+    props: { news, imagesUrls },
     revalidate: 10 // rerun after 10 seconds
   }
 }
+
 export default prueba
