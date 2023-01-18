@@ -13,11 +13,11 @@ const Frame = (props) => {
       </Header>
       <FrameWrapper>
         <LeftFrame>
-          <EasternLeaderboard />
+          <WesternLeaderboard />
         </LeftFrame>
         <MidFrame />
         <RightFrame>
-          <WesternLeaderboard />
+          <EasternLeaderboard />
         </RightFrame>
       </FrameWrapper>
     </GeneralFrame>

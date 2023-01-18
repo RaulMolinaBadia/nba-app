@@ -6,6 +6,7 @@ const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
 const EasternLeaderboard = () => {
   const teamsData = useDataAPI(teamsURL)
+  let position = 1
   return (
     <Leaderboard>
       <ConferenceHeader>EAST CONFERENCE</ConferenceHeader>
@@ -16,6 +17,9 @@ const EasternLeaderboard = () => {
             const findTeam = TeamsList.find((t) => t.name === teamName[teamName.length - 1])
             return (
               <TeamContainer key={i}>
+                <Position>
+                  {position++}
+                </Position>
                 {findTeam ? <Logo src={findTeam.logo.src} alt={team.name} /> : null}
                 <TeamName>{team.full_name}</TeamName>
               </TeamContainer>
