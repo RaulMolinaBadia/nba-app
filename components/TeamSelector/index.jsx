@@ -3,7 +3,6 @@ import Router from 'next/router'
 
 const TeamSelector = (props) => {
   const teams = props.teams.teams.data
-  console.log(teams[0].city)
 
   return (
     <TeamSelectorContainer>
