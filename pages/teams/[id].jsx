@@ -6,8 +6,11 @@ import MenuBar from '../../components/MenuBar/index'
 import TeamListBar from '../../components/TeamListBar'
 import Frame from '../../components/Frame'
 import TeamsList from '../../public/nbaLogos'
+import axios from 'axios'
+import cheerio from 'cheerio'
 
-export default function DynamicPage ({ id }) {
+export default function DynamicPage (props) {
+  console.log(props)
   const router = useRouter()
   const { query } = router
   const teamSplited = (query.id).split(' ')
@@ -25,13 +28,43 @@ export default function DynamicPage ({ id }) {
       <Frame
         teamLogo={findTeam.logo.src}
         teamName={query.id}
-        news={[]}
-        imagesUrls={[]}
+        news={props.props.news}
+        imagesUrls={props.props.imagesUrls}
       />
     </div>
   )
 }
+async function getImageUrl (url) {
+  const { data } = await axios.get(url)
+  const $ = cheerio.load(data)
+  return $('.ArticleContent_article__NBhQ8 img').attr('src')
+}
 
 DynamicPage.getInitialProps = async ({ query }) => {
-  return { id: query.id }
+  const headersList = {
+    Accept: '*/*',
+    'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
+    'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
+  }
+  // Hay que cambiar para que query id de igual si esta en mayuscula o
+  const response = await fetch(`https://nba-latest-news.p.rapidapi.com/articles?source=nba&team=${(query.id).toLowerCase()}`, {
+    method: 'GET',
+    headers: headersList
+  })
+  const news = await response.json()
+  const imagesUrls = []
+  const defaultImageUrl = 'defaultImage.jpg'
+  for (const newsItem of news) {
+    const imageUrl = await getImageUrl(newsItem.url)
+    if (imageUrl) {
+      imagesUrls.push(imageUrl)
+    } else {
+      imagesUrls.push(defaultImageUrl)
+    }
+  }
+
+  return {
+    props: { news, imagesUrls, id: query.id },
+    revalidate: 10 // rerun after 10 seconds
+  }
 }

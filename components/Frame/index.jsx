@@ -14,7 +14,6 @@ import Images from 'next/image'
 import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
 
 const Frame = props => {
-  console.log(props)
   return (
     <GeneralFrame>
       <Header>
@@ -37,22 +36,29 @@ const Frame = props => {
           <WesternLeaderboard />
         </LeftFrame>
         <MidFrame>
-          {props.news.map((newsItem, i) => (
-            <div key={i}>
-              <h1>{newsItem.title}</h1>
-              <Link href={newsItem.url}>
-                <ImageNews
-                  src={
-                    props.imagesUrls[i] === 'defaultImage.jpg'
-                      ? '/background-images/mjordan.png'
-                      : props.imagesUrls[i]
-                  }
-                  alt='newsImages'
-                />
-              </Link>
-            </div>
-          ))}
+          {props.news.length === 0
+            ? (
+              <div>No hay noticias disponibles de los {props.teamName}</div>
+              )
+            : (
+                props.news.map((newsItem, i) => (
+                  <div key={i}>
+                    <h1>{newsItem.title}</h1>
+                    <Link href={newsItem.url}>
+                      <ImageNews
+                        src={
+              props.imagesUrls[i] === 'defaultImage.jpg'
+                ? '/background-images/mjordan.png'
+                : props.imagesUrls[i]
+            }
+                        alt='newsImages'
+                      />
+                    </Link>
+                  </div>
+                ))
+              )}
         </MidFrame>
+
         <RightFrame>
           <EasternLeaderboard />
         </RightFrame>
