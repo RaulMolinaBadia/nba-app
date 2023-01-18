@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import MenuBar from '../components/MenuBar/index'
-import { NavBar } from '../styles/pages/LandingPage'
-import TeamListBar from '../components/TeamListBar'
+import Footer from '../components/Footer/index'
 import Frame from '../components/Frame'
+import MenuBar from '../components/MenuBar/index'
+import TeamListBar from '../components/TeamListBar'
+import { NavBar } from '../styles/pages/LandingPage'
 
 export default function Home () {
   return (
@@ -29,6 +30,7 @@ export default function Home () {
         news={[]}
         imagesUrls={[]}
       />
+      <Footer />
     </div>
   )
 }

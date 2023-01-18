@@ -5,7 +5,8 @@ import {
   LeftFrame,
   MidFrame,
   RightFrame,
-  ImageNews
+  ImageNews,
+  NewsFrame
 } from './styles'
 import { Header, TeamName } from './propStyles'
 import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
@@ -27,7 +28,7 @@ const Frame = props => {
             />
             )
           : (
-            <Images src={props.teamLogo} width={70} height={70} alt='team logo' />
+            <Images src={(props.teamLogo || `/nba-logos/${props.teamName}-logo.png`)} width={70} height={70} alt='team logo' />
             )}
         <TeamName>{props.teamName}</TeamName>
       </Header>
@@ -38,11 +39,11 @@ const Frame = props => {
         <MidFrame>
           {props.news.length === 0
             ? (
-              <div>No hay noticias disponibles de los {props.teamName}</div>
+              <NewsFrame>No hay noticias disponibles de los {props.teamName}</NewsFrame>
               )
             : (
                 props.news.map((newsItem, i) => (
-                  <div key={i}>
+                  <NewsFrame key={i}>
                     <h1>{newsItem.title}</h1>
                     <Link href={newsItem.url}>
                       <ImageNews
@@ -54,7 +55,7 @@ const Frame = props => {
                         alt='newsImages'
                       />
                     </Link>
-                  </div>
+                  </NewsFrame>
                 ))
               )}
         </MidFrame>

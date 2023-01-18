@@ -1,16 +1,19 @@
-import { useRouter } from 'next/router'
-
+import Link from 'next/link'
 import Head from 'next/head'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
+import Frame from '../../components/Frame'
+import Footer from '../../components/Footer/index'
 import MenuBar from '../../components/MenuBar/index'
-import { NavBar } from '../../styles/pages/LandingPage'
 import TeamListBar from '../../components/TeamListBar'
-import Link from 'next/link'
+import { NavBar } from '../../styles/pages/LandingPage'
 
 export default function News ({ id }) {
   const router = useRouter()
   const { query } = router
-  const teamSplited = (query.id).split(' ')
+  let teamSplited = (query.id).split(' ')
+  teamSplited = teamSplited[teamSplited.length - 1]
+
   return (
     <div>
       <Head>
@@ -25,9 +28,15 @@ export default function News ({ id }) {
         <Link href='/'>
           <Image src='/app-logo/Logo-NBA.png' width={100} height={57} alt='logoNBA' priority />
         </Link>
-        <MenuBar teamName={teamSplited[teamSplited.length - 1]} />
+        <MenuBar teamName={teamSplited} />
       </NavBar>
       <TeamListBar />
+      <Frame
+        teamName={teamSplited}
+        news={[]}
+        imagesUrls={[]}
+      />
+      <Footer />
     </div>
   )
 }

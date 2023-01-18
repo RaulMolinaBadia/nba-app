@@ -1,13 +1,14 @@
-import { useRouter } from 'next/router'
-import Link from 'next/link'
-import Image from 'next/image'
-import { NavBar } from '../../styles/pages/LandingPage'
-import MenuBar from '../../components/MenuBar/index'
-import TeamListBar from '../../components/TeamListBar'
-import Frame from '../../components/Frame'
-import TeamsList from '../../public/nbaLogos'
 import axios from 'axios'
 import cheerio from 'cheerio'
+import Link from 'next/link'
+import Image from 'next/image'
+import { useRouter } from 'next/router'
+import Frame from '../../components/Frame'
+import Footer from '../../components/Footer/index'
+import MenuBar from '../../components/MenuBar/index'
+import TeamListBar from '../../components/TeamListBar'
+import TeamsList from '../../public/nbaLogos'
+import { NavBar } from '../../styles/pages/LandingPage'
 
 export default function DynamicPage (props) {
   console.log(props)
@@ -31,6 +32,7 @@ export default function DynamicPage (props) {
         news={props.props.news}
         imagesUrls={props.props.imagesUrls}
       />
+      <Footer />
     </div>
   )
 }

@@ -1,10 +1,11 @@
-import { useRouter } from 'next/router'
 import Link from 'next/link'
 import Image from 'next/image'
-import { NavBar } from '../../styles/pages/LandingPage'
+import { useRouter } from 'next/router'
+import Frame from '../../components/Frame'
+import Footer from '../../components/Footer/index'
 import MenuBar from '../../components/MenuBar/index'
 import TeamListBar from '../../components/TeamListBar'
-import Frame from '../../components/Frame'
+import { NavBar } from '../../styles/pages/LandingPage'
 
 export default function DynamicPage ({ id }) {
   const router = useRouter()
@@ -24,6 +25,7 @@ export default function DynamicPage ({ id }) {
         news={[]}
         imagesUrls={[]}
       />
+      <Footer />
     </div>
   )
 }

@@ -1,12 +1,13 @@
+import axios from 'axios'
+import cheerio from 'cheerio'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import axios from 'axios'
-import cheerio from 'cheerio'
-import MenuBar from '../components/MenuBar/index'
-import { NavBar } from '../styles/pages/LandingPage'
-import TeamListBar from '../components/TeamListBar'
 import Frame from '../components/Frame'
+import Footer from '../components/Footer/index'
+import MenuBar from '../components/MenuBar/index'
+import TeamListBar from '../components/TeamListBar'
+import { NavBar } from '../styles/pages/LandingPage'
 
 export default function News (props) {
   return (
@@ -31,6 +32,7 @@ export default function News (props) {
         news={props.news}
         imagesUrls={props.imagesUrls}
       />
+      <Footer />
     </div>
   )
 }

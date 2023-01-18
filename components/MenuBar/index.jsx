@@ -24,10 +24,11 @@ const MenuBar = props => {
       <ItemMenuFrame>
         {teamLogo === 'Logo-NBA'
           ? (
+            // TODO hacer mas pequeño el logo porque se bugea al bajar las dimensiones
             <Image
               src='/app-logo/Logo-NBA.png'
-              width={100}
-              height={57}
+              width={50}
+              height={25}
               alt='NBA logo'
             />
             )

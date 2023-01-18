@@ -1,9 +1,10 @@
 import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import MenuBar from '../components/MenuBar'
+import Footer from '../components/Footer/index'
 import TeamInfoDisplayer from '../components/TeamInfoDisplayer'
 import { NavBar } from '../styles/pages/LandingPage'
-import MenuBar from '../components/MenuBar'
-import Link from 'next/link'
-import Image from 'next/image'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -22,6 +23,7 @@ const Teams = (teams) => {
         <MenuBar teamName='Blazers' />
       </NavBar>
       <TeamInfoDisplayer teams={teams} />
+      <Footer />
     </div>
   )
 }

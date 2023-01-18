@@ -5,11 +5,12 @@ export const GeneralFrame = styled.div`
   flex-direction: column;
   width: 100%;
   height: fit-content;
-  background-color: white;
+  background-color: red;
   color: black;
   align-items: center;
-  padding-bottom: 50px;
-`
+  padding-top: 20px;
+  padding-bottom: 20px;
+  `
 export const FrameWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -35,7 +36,7 @@ export const MidFrame = styled.div`
   align-items: center;
   background-color: white;
   width: 50%;
-  min-width: 380px;
+  min-width: 340px;
   height: 63vh;
   color: black;
   overflow: scroll;
@@ -58,7 +59,7 @@ export const ImageNews = styled.img`
 
 export const NewsFrame = styled.div`
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   align-content: center;
-  
 `

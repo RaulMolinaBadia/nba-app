@@ -3,11 +3,11 @@ import styled from '@emotion/styled'
 export const MenuBarWrapper = styled.nav`
     display: flex;
     flex-direction: row;
-    // width: 40rem;
     justify-content: space-between;
     background-color: #A9A9A9;
     border-radius: 0.5rem 0 0 0.5rem;
     margin-bottom: 1rem;
+    width: 40%
 `
 
 export const Button = styled.a`

@@ -5,7 +5,7 @@ export const TeamListBarWrapper = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    width: 98%;
+    width: 99%;
     flex-wrap: wrap;
 `
 
