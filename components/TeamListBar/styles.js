@@ -7,6 +7,8 @@ export const TeamListBarWrapper = styled.div`
     align-items: center;
     width: 99%;
     flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
 `
 
 export const Logo = styled.img`

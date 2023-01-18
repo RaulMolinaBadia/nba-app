@@ -17,6 +17,7 @@ export const FrameWrapper = styled.div`
   flex-wrap: wrap;
   width: 90%;
   background-color: lightgray;
+  justify-content: center;
 `
 export const LeftFrame = styled.div`
   display: flex;
@@ -59,6 +60,7 @@ export const ImageNews = styled.img`
 
 export const NewsFrame = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;

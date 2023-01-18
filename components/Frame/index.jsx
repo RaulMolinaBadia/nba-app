@@ -20,15 +20,15 @@ const Frame = props => {
       <Header>
         {props.teamName === 'NEWS'
           ? (
+            <div />
+            )
+          : (
             <Images
-              src='/app-logo/Logo-NBA.png'
+              src={props.teamLogo || `/nba-logos/${props.teamName}-logo.png`}
               width={70}
               height={70}
               alt='team logo'
             />
-            )
-          : (
-            <Images src={(props.teamLogo || `/nba-logos/${props.teamName}-logo.png`)} width={70} height={70} alt='team logo' />
             )}
         <TeamName>{props.teamName}</TeamName>
       </Header>
@@ -39,7 +39,9 @@ const Frame = props => {
         <MidFrame>
           {props.news.length === 0
             ? (
-              <NewsFrame>No hay noticias disponibles de los {props.teamName}</NewsFrame>
+              <NewsFrame>
+                No hay noticias disponibles de los {props.teamName}
+              </NewsFrame>
               )
             : (
                 props.news.map((newsItem, i) => (
@@ -48,10 +50,10 @@ const Frame = props => {
                     <Link href={newsItem.url}>
                       <ImageNews
                         src={
-              props.imagesUrls[i] === 'defaultImage.jpg'
-                ? '/background-images/mjordan.png'
-                : props.imagesUrls[i]
-            }
+                      props.imagesUrls[i] === 'defaultImage.jpg'
+                        ? '/background-images/mjordan.png'
+                        : props.imagesUrls[i]
+                    }
                         alt='newsImages'
                       />
                     </Link>

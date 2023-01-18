@@ -1,9 +1,17 @@
-import { MenuBarContainer, ListMenuItem, ListMenu, NavBarRight, NavBarLeft } from './styles'
 import Link from 'next/link'
-import TeamsList from '../../public/nbaLogos'
 import Image from 'next/image'
+import React from 'react'
+import TeamsList from '../../public/nbaLogos'
 
-const MenuBar = props => {
+import {
+  MenuBarWrapper,
+  NavBarLeft,
+  NavBarRight,
+  ListMenu,
+  ListMenuItem
+} from './styles.js'
+
+const NavBar = props => {
   const teamName = props.teamName.split(' ')
   let teamLogo = ''
   if (teamName[0] === 'Logo-NBA') {
@@ -13,12 +21,10 @@ const MenuBar = props => {
       team => team.name === teamName[teamName.length - 1]
     )
   }
-
   return (
-    <MenuBarContainer>
+    <MenuBarWrapper>
       <NavBarLeft>
-        <Image src='/app-logo/Logo-NBA.png' alt='logo NBA' width={100} height={57} />
-
+        <Image src='/app-logo/Logo-NBA.png' alt='logo NBA' width={100} height={60} />
       </NavBarLeft>
       <NavBarRight>
         <ListMenu>
@@ -31,13 +37,7 @@ const MenuBar = props => {
         </ListMenu>
         {teamLogo === 'Logo-NBA'
           ? (
-        // TODO hacer mas pequeño el logo porque se bugea al bajar las dimensiones
-            <Image
-              src='/app-logo/Logo-NBA.png'
-              width={50}
-              height={25}
-              alt='NBA logo'
-            />
+            <div />
             )
           : (
             <Image
@@ -48,8 +48,8 @@ const MenuBar = props => {
             />
             )}
       </NavBarRight>
-    </MenuBarContainer>
+    </MenuBarWrapper>
   )
 }
 
-export default MenuBar
+export default NavBar
