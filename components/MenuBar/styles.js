@@ -18,7 +18,7 @@ export const TeamsFrame = styled.div`
     margin: 0.25rem;
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: black;
     cursor: pointer;
 `
 export const NewsFrame = styled.div`
@@ -28,7 +28,7 @@ export const NewsFrame = styled.div`
     width: 10rem;
     margin: 0.25rem;
     font-weight: bold;
-    color: white;
+    color: black;
     cursor: pointer;
 `
 export const LogoFrame = styled.div`

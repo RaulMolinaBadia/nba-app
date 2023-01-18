@@ -6,6 +6,5 @@ export default function handler (req, res) {
   // res.status(200).json({ name: "John Doe" });
   axios.get(url).then((response) => {
     res.status(200).json(response.data)
-    console.log(response.data)
   })
 }

@@ -7,7 +7,6 @@ const MenuBar = (props) => {
   let teamLogo = ''
   if (teamName[0] === 'Logo-NBA') {
     teamLogo = 'Logo-NBA'
-    console.log('a')
   } else {
     teamLogo = TeamsList.find((team) => team.name === teamName[teamName.length - 1])
   }

@@ -26,6 +26,8 @@ export default function Home () {
       <TeamListBar />
       <Frame
         teamName='NEWS'
+        news={[]}
+        imagesUrls={[]}
       />
     </div>
   )
