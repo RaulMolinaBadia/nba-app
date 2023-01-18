@@ -9,12 +9,13 @@ export const Leaderboard = styled.div`
 
 export const ConferenceHeader = styled.h1`
     font-size: 1.5rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
+
+    width: 100%
     `
 export const Teams = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: stretch;
     `
 
 export const TeamContainer = styled.div`
@@ -37,6 +38,8 @@ export const Scoreboard = styled.div`
     display: flex;
     flex-direction: column;
     padding: 0.5rem;
+    align-items: center;
+
     `
 export const Record = styled.div`
     font-size: 1.25rem;

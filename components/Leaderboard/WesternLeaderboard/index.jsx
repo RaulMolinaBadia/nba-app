@@ -10,8 +10,8 @@ const WesternLeaderboard = () => {
   let position = 1
   return (
     <Leaderboard>
-      <ConferenceHeader>WEST CONFERENCE</ConferenceHeader>
       <Teams>
+        <ConferenceHeader>WEST CONFERENCE</ConferenceHeader>
         {teamsData.map((team, i) => {
           if (team.conference === 'West') {
             const teamName = teamsData[i].name.split(' ')
@@ -27,8 +27,7 @@ const WesternLeaderboard = () => {
             )
           } else { return null }
         })}
-      </Teams>
-      <Scoreboard>
+        {/* <Scoreboard>
         <Record>43-7</Record>
         <Record>40-10</Record>
         <Record>40-10</Record>
@@ -44,7 +43,8 @@ const WesternLeaderboard = () => {
         <Record>21-29</Record>
         <Record>19-31</Record>
         <Record>14-36</Record>
-      </Scoreboard>
+      </Scoreboard> */}
+      </Teams>
     </Leaderboard>
   )
 }

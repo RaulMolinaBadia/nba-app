@@ -4,6 +4,7 @@ export const NavBar = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    width: 100%;
 `
 
 export const TeamSelectorContainer = styled.div`
