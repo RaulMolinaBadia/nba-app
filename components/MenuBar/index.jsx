@@ -31,7 +31,6 @@ const MenuBar = props => {
         </ListMenu>
         {teamLogo === 'Logo-NBA'
           ? (
-        // TODO hacer mas pequeño el logo porque se bugea al bajar las dimensiones
             <Image
               src='/app-logo/Logo-NBA.png'
               width={50}
