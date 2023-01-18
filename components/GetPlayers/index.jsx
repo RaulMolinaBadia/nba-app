@@ -7,18 +7,18 @@ const playersURL = 'https://www.balldontlie.io/api/v1/players'
 
 const GetPlayers = (team) => {
   const players = useDataAPI(playersURL)
+  const filteredPlayers = players.filter(player => player.team.name === team)
+  console.log(filteredPlayers)
   return (
     <div>
       <Title>LINE-UP</Title>
-      {players.map((player, i) => {
-        return (
-          <PlayerInfo key={i}>
-            <Link href={`/players/${player.first_name}${player.last_name}`}>
-              <Name>{player.first_name} {player.last_name}</Name>
-            </Link>
-          </PlayerInfo>
-        )
-      })}
+      {filteredPlayers.map((player, i) => (
+        <PlayerInfo key={i}>
+          <Link href={`/players/${player.first_name}${player.last_name}`}>
+            <Name>{player.first_name} {player.last_name}</Name>
+          </Link>
+        </PlayerInfo>
+      ))}
     </div>
   )
 }

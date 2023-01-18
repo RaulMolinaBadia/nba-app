@@ -34,7 +34,7 @@ const Frame = props => {
       </Header>
       <FrameWrapper>
         <LeftFrame>
-          <EasternLeaderboard />
+          <WesternLeaderboard />
         </LeftFrame>
         <MidFrame>
           {props.news.map((newsItem, i) => (
@@ -54,7 +54,7 @@ const Frame = props => {
           ))}
         </MidFrame>
         <RightFrame>
-          <WesternLeaderboard />
+          <EasternLeaderboard />
         </RightFrame>
       </FrameWrapper>
     </GeneralFrame>
