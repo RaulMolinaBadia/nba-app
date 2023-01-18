@@ -24,7 +24,9 @@ const NavBar = props => {
   return (
     <MenuBarWrapper>
       <NavBarLeft>
-        <Image src='/app-logo/Logo-NBA.png' alt='logo NBA' width={100} height={60} />
+        <Link href='/'>
+          <Image src='/app-logo/Logo-NBA.png' alt='logo NBA' width={100} height={60} unoptimized />
+        </Link>
       </NavBarLeft>
       <NavBarRight>
         <ListMenu>
