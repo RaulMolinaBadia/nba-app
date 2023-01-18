@@ -31,7 +31,7 @@ const Frame = props => {
               <h1>{newsItem.title}</h1>
               <Link href={newsItem.url}>
                 <ImageNews
-                  src={props.imagesUrls[i]}
+                  src={props.imagesUrls[i] === 'defaultImage.jpg' ? '/background-images/mjordan.png' : props.imagesUrls[i]}
                   alt='newsImages'
                 />
               </Link>
