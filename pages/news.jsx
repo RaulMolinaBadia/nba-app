@@ -9,7 +9,6 @@ import TeamListBar from '../components/TeamListBar'
 import Frame from '../components/Frame'
 
 export default function News (props) {
-  console.log(props)
   return (
     <div>
       <Head>

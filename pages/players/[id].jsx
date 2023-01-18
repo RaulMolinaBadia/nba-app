@@ -11,7 +11,6 @@ export default function DynamicPage ({ id }) {
   const router = useRouter()
   const { query } = router
   const findTeam = TeamsList.find(team => team.name === query.id)
-  console.log(findTeam)
   return (
     <div>
       <h1 />

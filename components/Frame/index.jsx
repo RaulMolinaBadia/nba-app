@@ -18,7 +18,18 @@ const Frame = props => {
   return (
     <GeneralFrame>
       <Header>
-        {props.teamName === 'NEWS' ? <Images src='/app-logo/Logo-NBA.png' width={70} height={70} alt='team logo' /> : <Images src={props.teamLogo} width={70} height={70} alt='team logo' />}
+        {props.teamName === 'NEWS'
+          ? (
+            <Images
+              src='/app-logo/Logo-NBA.png'
+              width={70}
+              height={70}
+              alt='team logo'
+            />
+            )
+          : (
+            <Images src={props.teamLogo} width={70} height={70} alt='team logo' />
+            )}
         <TeamName>{props.teamName}</TeamName>
       </Header>
       <FrameWrapper>
@@ -31,7 +42,11 @@ const Frame = props => {
               <h1>{newsItem.title}</h1>
               <Link href={newsItem.url}>
                 <ImageNews
-                  src={props.imagesUrls[i] === 'defaultImage.jpg' ? '/background-images/mjordan.png' : props.imagesUrls[i]}
+                  src={
+                    props.imagesUrls[i] === 'defaultImage.jpg'
+                      ? '/background-images/mjordan.png'
+                      : props.imagesUrls[i]
+                  }
                   alt='newsImages'
                 />
               </Link>

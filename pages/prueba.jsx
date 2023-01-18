@@ -3,7 +3,6 @@ import cheerio from 'cheerio'
 import axios from 'axios'
 import Image from 'next/image'
 const prueba = (props) => {
-  console.log(props)
   return (
     <div>
       {
