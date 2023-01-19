@@ -8,7 +8,6 @@ const playersURL = 'https://www.balldontlie.io/api/v1/players'
 const GetPlayers = (team) => {
   const players = useDataAPI(playersURL)
   const filteredPlayers = players.filter(player => player.team.name === team)
-  console.log(filteredPlayers)
   return (
     <div>
       <Title>LINE-UP</Title>

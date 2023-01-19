@@ -1,27 +1,26 @@
 import React from 'react'
+import Head from 'next/head'
+import Footer from '../components/Footer/index'
+import NavBar from '../components/NavBar'
 import TeamInfoDisplayer from '../components/TeamInfoDisplayer'
-import { NavBar } from '../styles/pages/LandingPage'
-import MenuBar from '../components/MenuBar'
-import Link from 'next/link'
-import Image from 'next/image'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
 const Teams = (teams) => {
+  // TODO hay que configurar el teamName del logo de arriba a la derecha
   return (
     <div>
-      <NavBar>
-        <Link href='/home'>
-          <Image
-            src='/app-logo/Logo-NBA.png'
-            width={100}
-            height={57}
-            alt='logoNBA'
-          />
-        </Link>
-        <MenuBar teamName='Blazers' />
-      </NavBar>
+      <Head>
+        <title>NBA-App</title>
+        <link rel='icon' href='/app-logo/Logo-NBA.png' />
+        <meta
+          name='NBA-App'
+          content='Page of nba content'
+        />
+      </Head>
+      <NavBar teamName='Logo-NBA' />
       <TeamInfoDisplayer teams={teams} />
+      <Footer />
     </div>
   )
 }

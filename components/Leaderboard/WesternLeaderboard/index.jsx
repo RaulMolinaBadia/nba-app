@@ -1,7 +1,8 @@
 import React from 'react'
+import Images from 'next/image'
 import TeamsList from '../../../public/nbaLogos'
 import { useDataAPI } from '../../../api/data'
-import { ConferenceHeader, TeamContainer, Logo, TeamName, Scoreboard, Record, Leaderboard, Teams, Position } from './styles'
+import { ConferenceHeader, TeamContainer, TeamName, Leaderboard, Teams, Position } from './styles'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -10,8 +11,8 @@ const WesternLeaderboard = () => {
   let position = 1
   return (
     <Leaderboard>
-      <ConferenceHeader>WEST CONFERENCE</ConferenceHeader>
       <Teams>
+        <ConferenceHeader>WEST CONFERENCE</ConferenceHeader>
         {teamsData.map((team, i) => {
           if (team.conference === 'West') {
             const teamName = teamsData[i].name.split(' ')
@@ -21,14 +22,13 @@ const WesternLeaderboard = () => {
                 <Position>
                   {position++}
                 </Position>
-                {findTeam ? <Logo src={findTeam.logo.src} alt={team.name} /> : null}
+                {findTeam ? <Images src={findTeam.logo.src} alt={team.name} width={30} height={30} /> : null}
                 <TeamName>{team.full_name}</TeamName>
               </TeamContainer>
             )
           } else { return null }
         })}
-      </Teams>
-      <Scoreboard>
+        {/* <Scoreboard>
         <Record>43-7</Record>
         <Record>40-10</Record>
         <Record>40-10</Record>
@@ -44,7 +44,8 @@ const WesternLeaderboard = () => {
         <Record>21-29</Record>
         <Record>19-31</Record>
         <Record>14-36</Record>
-      </Scoreboard>
+      </Scoreboard> */}
+      </Teams>
     </Leaderboard>
   )
 }
