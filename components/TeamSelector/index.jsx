@@ -3,11 +3,11 @@ import Router from 'next/router'
 
 const TeamSelector = (props) => {
   const teams = props.teams.teams.data
-  console.log(teams[0].city)
 
   return (
     <TeamSelectorContainer>
       <Select
+        data-testid='teams'
         onChange={e => {
           props.setTeamName(e.target.value)
           Router.push(`/home/${e.target.value}`)

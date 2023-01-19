@@ -1,30 +1,19 @@
-import axios from 'axios'
+import React from 'react'
 import cheerio from 'cheerio'
-import Head from 'next/head'
-import Frame from '../components/Frame'
-import Footer from '../components/Footer/index'
-import TeamListBar from '../components/TeamListBar'
-import NavBar from '../components/NavBar'
-
-export default function News (props) {
+import axios from 'axios'
+import Image from 'next/image'
+const prueba = (props) => {
   return (
     <div>
-      <Head>
-        <title>NBA-App</title>
-        <link rel='icon' href='/app-logo/Logo-NBA.png' />
-        <meta
-          name='NBA-App'
-          content='Page of nba content'
-        />
-      </Head>
-      <NavBar teamName='Logo-NBA' />
-      <TeamListBar />
-      <Frame
-        teamName='NEWS'
-        news={props.news}
-        imagesUrls={props.imagesUrls}
-      />
-      <Footer />
+      {
+        props.news.map((newsItem, i) => (
+          <div key={i}>
+            <h1>{newsItem.title}</h1>
+            <Image src={props.imagesUrls[i]} width={800} height={700} alt='newsImages' />
+          </div>
+        ))
+        }
+      <img src={props.html} />
     </div>
   )
 }
@@ -48,7 +37,7 @@ export async function getStaticProps () {
   const news = await response.json()
 
   const imagesUrls = []
-  const defaultImageUrl = 'defaultImage.jpg'
+  const defaultImageUrl = '/path/to/default-image.jpg'
   for (const newsItem of news) {
     const imageUrl = await getImageUrl(newsItem.url)
     if (imageUrl) {
@@ -63,3 +52,5 @@ export async function getStaticProps () {
     revalidate: 10 // rerun after 10 seconds
   }
 }
+
+export default prueba

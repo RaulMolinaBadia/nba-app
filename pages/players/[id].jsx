@@ -1,16 +1,13 @@
-import Head from 'next/head'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Frame from '../../components/Frame'
 import Footer from '../../components/Footer/index'
 import TeamListBar from '../../components/TeamListBar'
 import NavBar from '../../components/NavBar'
 
-export default function News ({ id }) {
+export default function DynamicPage ({ id }) {
   const router = useRouter()
   const { query } = router
-  let teamSplited = (query.id).split(' ')
-  teamSplited = teamSplited[teamSplited.length - 1]
-
   return (
     <div>
       <Head>
@@ -21,10 +18,10 @@ export default function News ({ id }) {
           content='Page of nba content'
         />
       </Head>
-      <NavBar teamName={teamSplited} />
+      <NavBar teamLogo='Logo-NBA' />
       <TeamListBar />
       <Frame
-        teamName={teamSplited}
+        teamName={query.id}
         news={[]}
         imagesUrls={[]}
       />
@@ -33,6 +30,6 @@ export default function News ({ id }) {
   )
 }
 
-News.getInitialProps = async ({ query }) => {
+DynamicPage.getInitialProps = async ({ query }) => {
   return { id: query.id }
 }

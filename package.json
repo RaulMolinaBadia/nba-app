@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "axios": "^1.2.2",
+    "cheerio": "^1.0.0-rc.12",
     "jest-cucumber": "^3.0.1",
     "next": "13.1.1",
     "react": "18.2.0",

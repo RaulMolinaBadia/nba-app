@@ -10,7 +10,6 @@ const TeamInfoDisplayer = (props) => {
     <Teams>
       {teams.map((team, i) => {
         const teamName = teams[i].name.split(' ')
-        console.log(teamName[teamName.length - 1])
         const findTeam = TeamsList.find((t) => t.name === teamName[teamName.length - 1])
         return (
           <TeamInfo key={i}>
@@ -18,9 +17,9 @@ const TeamInfoDisplayer = (props) => {
               {findTeam ? <img src={findTeam.logo.src} alt={team.name} /> : null}
             </Link>
             <div>{team.full_name}</div>
-            <div>{team.city} 📍</div>
             <div>Divsion: {team.division}</div>
             <div>Conference: {team.conference}</div>
+            <div>{team.city} 📍</div>
           </TeamInfo>
         )
       })}
