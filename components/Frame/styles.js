@@ -5,8 +5,8 @@ export const GeneralFrame = styled.div`
   flex-direction: column;
   width: 100%;
   height: fit-content;
-  background-color: red;
-  color: black;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -18,6 +18,8 @@ export const FrameWrapper = styled.div`
   width: 90%;
   background-color: lightgray;
   justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 `
 export const LeftFrame = styled.div`
   display: flex;
@@ -57,7 +59,6 @@ export const RightFrame = styled.div`
 export const ImageNews = styled.img`
   width: 90%;
 `
-
 export const NewsFrame = styled.div`
   display: flex;
   flex-direction: column;
