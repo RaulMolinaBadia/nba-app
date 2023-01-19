@@ -50,10 +50,11 @@ DynamicPage.getInitialProps = async ({ query }) => {
     'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
   }
   try {
-    const response = await fetch(`https://nba-latest-news.p.rapidapi.com/articles?source=nba&team=${(query.id).toLowerCase()}`, {
+    const response = await fetch(`https://cors-anywhere.herokuapp.com/https://nba-latest-news.p.rapidapi.com/articles?source=nba&team=${(query.id).toLowerCase()}`, {
       method: 'GET',
       headers: headersList
     })
+
     const news = await response.json()
     const imagesUrls = []
     const defaultImageUrl = 'defaultImage.jpg'
