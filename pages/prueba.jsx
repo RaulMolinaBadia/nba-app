@@ -1,6 +1,5 @@
 import React from 'react'
 import cheerio from 'cheerio'
-import axios from 'axios'
 import Image from 'next/image'
 const prueba = (props) => {
   return (
@@ -19,7 +18,7 @@ const prueba = (props) => {
 }
 
 async function getImageUrl (url) {
-  const { data } = await axios.get(url)
+  const { data } = await fetch(url)
   const $ = cheerio.load(data)
   return $('.ArticleContent_article__NBhQ8 img').attr('src')
 }
