@@ -46,7 +46,6 @@ async function getImageUrl (url) {
 DynamicPage.getInitialProps = async ({ query }) => {
   const headersList = {
     Accept: '*/*',
-    'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
     'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
   }
   try {
