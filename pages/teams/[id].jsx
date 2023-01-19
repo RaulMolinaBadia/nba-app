@@ -11,7 +11,6 @@ import NavBar from '../../components/NavBar'
 export default function DynamicPage (props) {
   const router = useRouter()
   const { query } = router
-  router.replace(`/teams/${query.id}`, `/teams/${query.id}`, { shallow: true })
   console.log(query)
   const teamSplited = (query.id).split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
