@@ -11,6 +11,7 @@ export default function News ({ id }) {
   const { query } = router
   const teamSplited = (query.id).split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
+  console.log(findTeam)
   return (
     <div>
       <Head>
@@ -24,6 +25,7 @@ export default function News ({ id }) {
       <NavBar teamName={teamSplited[teamSplited.length - 1]} />
       <TeamListBar />
       <Frame
+        teamLogo={findTeam.logo.src}
         teamName={query.id}
         news={[]}
         imagesUrls={[]}

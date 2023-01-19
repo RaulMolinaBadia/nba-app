@@ -24,7 +24,7 @@ const Frame = props => {
             )
           : (
             <Images
-              src={props.teamLogo || `/nba-logos/${props.teamName}-logo.png`}
+              src={props.teamLogo}
               width={70}
               height={70}
               alt='team logo'
