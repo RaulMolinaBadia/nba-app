@@ -4,13 +4,13 @@ import Frame from '../../components/Frame'
 import Footer from '../../components/Footer/index'
 import TeamListBar from '../../components/TeamListBar'
 import NavBar from '../../components/NavBar'
+import TeamsList from '../../public/nbaLogos'
 
 export default function News ({ id }) {
   const router = useRouter()
   const { query } = router
-  let teamSplited = (query.id).split(' ')
-  teamSplited = teamSplited[teamSplited.length - 1]
-
+  const teamSplited = (query.id).split(' ')
+  const findTeam = TeamsList.find(team => team.name === query.id)
   return (
     <div>
       <Head>
@@ -24,7 +24,8 @@ export default function News ({ id }) {
       <NavBar teamName={teamSplited} />
       <TeamListBar />
       <Frame
-        teamName={teamSplited}
+        teamLogo={findTeam.logo.src}
+        teamName={query.id}
         news={[]}
         imagesUrls={[]}
       />
