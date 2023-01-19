@@ -1,12 +1,13 @@
 import React from 'react'
 import LoadingSpinner from '../LoadingSpinner'
+import { Container } from './styles'
 
 const LoadingPage = () => {
   return (
-    <div>
+    <Container>
       <LoadingSpinner />
       <p>Loading...</p>
-    </div>
+    </Container>
   )
 }
 
