@@ -1,3 +1,4 @@
+import axios from 'axios'
 import cheerio from 'cheerio'
 import Head from 'next/head'
 import Frame from '../components/Frame'
@@ -29,7 +30,7 @@ export default function News (props) {
 }
 
 async function getImageUrl (url) {
-  const { data } = await fetch(url)
+  const { data } = await axios.get(url)
   const $ = cheerio.load(data)
   return $('.ArticleContent_article__NBhQ8 img').attr('src')
 }
