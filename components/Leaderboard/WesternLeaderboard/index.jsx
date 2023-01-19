@@ -28,23 +28,6 @@ const WesternLeaderboard = () => {
             )
           } else { return null }
         })}
-        {/* <Scoreboard>
-        <Record>43-7</Record>
-        <Record>40-10</Record>
-        <Record>40-10</Record>
-        <Record>37-13</Record>
-        <Record>35-15</Record>
-        <Record>34-16</Record>
-        <Record>30-20</Record>
-        <Record>29-21</Record>
-        <Record>29-21</Record>
-        <Record>29-21</Record>
-        <Record>24-26</Record>
-        <Record>22-28</Record>
-        <Record>21-29</Record>
-        <Record>19-31</Record>
-        <Record>14-36</Record>
-      </Scoreboard> */}
       </Teams>
     </Leaderboard>
   )
