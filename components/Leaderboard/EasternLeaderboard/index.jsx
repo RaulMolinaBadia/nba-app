@@ -27,23 +27,6 @@ const EasternLeaderboard = () => {
             )
           } else { return null }
         })}
-        {/* <Scoreboard>
-          <Record>41-9</Record>
-          <Record>38-12</Record>
-          <Record>38-12</Record>
-          <Record>37-13</Record>
-          <Record>34-16</Record>
-          <Record>34-16</Record>
-          <Record>33-17</Record>
-          <Record>31-19</Record>
-          <Record>29-21</Record>
-          <Record>26-24</Record>
-          <Record>25-25</Record>
-          <Record>22-28</Record>
-          <Record>18-32</Record>
-          <Record>14-36</Record>
-          <Record>12-38</Record>
-        </Scoreboard> */}
       </Teams>
     </Leaderboard>
   )
