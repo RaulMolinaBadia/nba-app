@@ -48,25 +48,28 @@ DynamicPage.getInitialProps = async ({ query }) => {
     'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
     'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
   }
-  // Hay que cambiar para que query id de igual si esta en mayuscula o
-  const response = await fetch(`https://nba-latest-news.p.rapidapi.com/articles?source=nba&team=${(query.id).toLowerCase()}`, {
-    method: 'GET',
-    headers: headersList
-  })
-  const news = await response.json()
-  const imagesUrls = []
-  const defaultImageUrl = 'defaultImage.jpg'
-  for (const newsItem of news) {
-    const imageUrl = await getImageUrl(newsItem.url)
-    if (imageUrl) {
-      imagesUrls.push(imageUrl)
-    } else {
-      imagesUrls.push(defaultImageUrl)
+  try {
+    const response = await fetch(`https://nba-latest-news.p.rapidapi.com/articles?source=nba&team=${(query.id).toLowerCase()}`, {
+      method: 'GET',
+      headers: headersList
+    })
+    const news = await response.json()
+    const imagesUrls = []
+    const defaultImageUrl = 'defaultImage.jpg'
+    for (const newsItem of news) {
+      const imageUrl = await getImageUrl(newsItem.url)
+      if (imageUrl) {
+        imagesUrls.push(imageUrl)
+      } else {
+        imagesUrls.push(defaultImageUrl)
+      }
     }
-  }
 
-  return {
-    props: { news, imagesUrls, id: query.id },
-    revalidate: 10 // rerun after 10 seconds
+    return {
+      props: { news, imagesUrls, id: query.id },
+      revalidate: 10 // rerun after 10 seconds
+    }
+  } catch (error) {
+    console.log(error)
   }
 }

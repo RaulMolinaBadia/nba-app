@@ -25,11 +25,15 @@ export default function LandingPage (teams) {
 }
 
 export async function getServerSideProps () {
-  const response = await fetch(teamsURL)
-  const teams = await response.json()
-  return {
-    props: {
-      teams
+  try {
+    const response = await fetch(teamsURL)
+    const teams = await response.json()
+    return {
+      props: {
+        teams
+      }
     }
+  } catch (error) {
+
   }
 }
