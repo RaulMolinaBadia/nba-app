@@ -1,7 +1,8 @@
 import React from 'react'
+import Images from 'next/image'
 import TeamsList from '../../../public/nbaLogos'
 import { useDataAPI } from '../../../api/data'
-import { ConferenceHeader, TeamContainer, Logo, TeamName, Scoreboard, Record, Leaderboard, Teams, Position } from './styles'
+import { ConferenceHeader, TeamContainer, TeamName, Leaderboard, Teams, Position } from './styles'
 
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
@@ -21,7 +22,7 @@ const WesternLeaderboard = () => {
                 <Position>
                   {position++}
                 </Position>
-                {findTeam ? <Logo src={findTeam.logo.src} alt={team.name} /> : null}
+                {findTeam ? <Images src={findTeam.logo.src} alt={team.name} width={30} height={30} /> : null}
                 <TeamName>{team.full_name}</TeamName>
               </TeamContainer>
             )

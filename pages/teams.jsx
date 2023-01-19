@@ -1,4 +1,5 @@
 import React from 'react'
+import Head from 'next/head'
 import Footer from '../components/Footer/index'
 import NavBar from '../components/NavBar'
 import TeamInfoDisplayer from '../components/TeamInfoDisplayer'
@@ -9,6 +10,14 @@ const Teams = (teams) => {
   // TODO hay que configurar el teamName del logo de arriba a la derecha
   return (
     <div>
+      <Head>
+        <title>NBA-App</title>
+        <link rel='icon' href='/app-logo/Logo-NBA.png' />
+        <meta
+          name='NBA-App'
+          content='Page of nba content'
+        />
+      </Head>
       <NavBar teamName='Logo-NBA' />
       <TeamInfoDisplayer teams={teams} />
       <Footer />

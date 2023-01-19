@@ -11,7 +11,13 @@ export const NavBarLeft = styled.div`
 
 export const NavBarRight = styled.div`
   flex: 1;
-  background-color: #0077c9;
+  background: linear-gradient(
+    120deg,
+    SlateBlue 60%,
+    DodgerBlue 88%,
+    DodgerBlue 40%,
+    DodgerBlue 100%
+  );
   color: #fff;
   display: flex;
   align-items: center;
@@ -28,7 +34,8 @@ export const ListMenu = styled.ul`
   margin: 0;
   padding: 0;
   display: flex;
-`
+  gap: 5%;
+  `
 
 export const ListMenuItem = styled.li`
   padding: 10px;

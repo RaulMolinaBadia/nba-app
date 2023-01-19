@@ -1,5 +1,6 @@
 import axios from 'axios'
 import cheerio from 'cheerio'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import Frame from '../../components/Frame'
 import Footer from '../../components/Footer/index'
@@ -15,6 +16,14 @@ export default function DynamicPage (props) {
   const findTeam = TeamsList.find(team => team.name === query.id)
   return (
     <div>
+      <Head>
+        <title>NBA-App</title>
+        <link rel='icon' href='/app-logo/Logo-NBA.png' />
+        <meta
+          name='NBA-App'
+          content='Page of nba content'
+        />
+      </Head>
       <NavBar teamName={teamSplited[teamSplited.length - 1]} />
       <TeamListBar />
       <Frame

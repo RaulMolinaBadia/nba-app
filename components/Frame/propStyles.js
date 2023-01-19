@@ -10,7 +10,7 @@ export const Header = styled.div`
   align-items: center;
 `
 
-export const TeamName = styled.div`
+export const TeamName = styled.title`
   display: flex;
   flex-direction: column;
 `
