@@ -28,6 +28,8 @@ const Frame = props => {
               width={70}
               height={70}
               alt='team logo'
+              priority
+              quality={100}
             />
             )}
         <TeamName>{props.teamName}</TeamName>
