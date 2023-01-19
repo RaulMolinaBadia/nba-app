@@ -8,10 +8,8 @@ import NavBar from '../../components/NavBar'
 export default function News ({ id }) {
   const router = useRouter()
   const { query } = router
-  console.log(query.id)
   let teamSplited = (query.id).split(' ')
   teamSplited = teamSplited[teamSplited.length - 1]
-  console.log(teamSplited)
 
   return (
     <div>
