@@ -11,8 +11,10 @@ import NavBar from '../../components/NavBar'
 export default function DynamicPage (props) {
   const router = useRouter()
   const { query } = router
+  console.log(query)
   const teamSplited = (query.id).split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
+  console.log(findTeam)
   return (
     <div>
       <Head>

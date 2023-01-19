@@ -3,14 +3,18 @@ import Router from 'next/router'
 
 const TeamSelector = (props) => {
   const teams = props.teams.teams.data
-
+  const Redirect = (e) => {
+    props.setTeamName(e.target.value)
+    let teamSplited = (e.target.value).split(' ')
+    teamSplited = teamSplited[teamSplited.length - 1]
+    Router.push(`/home/${teamSplited}`)
+  }
   return (
     <TeamSelectorContainer>
       <Select
         data-testid='teams'
         onChange={e => {
-          props.setTeamName(e.target.value)
-          Router.push(`/home/${e.target.value}`)
+          Redirect(e)
         }}
         id='teams'
       >

@@ -21,10 +21,9 @@ export default function News ({ id }) {
           content='Page of nba content'
         />
       </Head>
-      <NavBar teamName={teamSplited} />
+      <NavBar teamName={teamSplited[teamSplited.length - 1]} />
       <TeamListBar />
       <Frame
-        teamLogo={findTeam.logo.src}
         teamName={query.id}
         news={[]}
         imagesUrls={[]}
