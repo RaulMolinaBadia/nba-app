@@ -10,22 +10,12 @@ import TeamsList from '../../public/nbaLogos'
 import NavBar from '../../components/NavBar'
 
 export default function DynamicPage (props) {
-  const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
   const { query } = router
   console.log(props)
   const teamSplited = query.id.split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
 
-  useEffect(() => {
-    if (props.props.news !== undefined) {
-      setIsLoading(false)
-    }
-  }, [props.props.news])
-
-  if (isLoading) {
-    return <div>Loading...</div>
-  }
   return (
     <div>
       <Head>
