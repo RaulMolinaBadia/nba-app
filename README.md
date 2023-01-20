@@ -33,7 +33,7 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 ## API
 
-Dirección: https://api.kingsleague.dev/
+Dirección: https://nba-app-project.vercel.app/
 
 Los endpoints disponibles son:
 
