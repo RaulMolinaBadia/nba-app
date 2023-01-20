@@ -9,7 +9,7 @@ export const useDataAPI = apiURL => {
       .then((data) => {
         setPost(data.data)
       })
-  }, [])
+  }, [!post])
 
   return post
 }

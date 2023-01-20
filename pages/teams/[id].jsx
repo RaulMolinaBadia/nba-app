@@ -2,6 +2,7 @@ import axios from 'axios'
 import cheerio from 'cheerio'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 import Frame from '../../components/Frame'
 import Footer from '../../components/Footer/index'
 import TeamListBar from '../../components/TeamListBar'
@@ -9,21 +10,28 @@ import TeamsList from '../../public/nbaLogos'
 import NavBar from '../../components/NavBar'
 
 export default function DynamicPage (props) {
+  const [isLoading, setIsLoading] = useState(true)
   const router = useRouter()
   const { query } = router
-  console.log(query)
-  const teamSplited = (query.id).split(' ')
+  console.log(props)
+  const teamSplited = query.id.split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
-  console.log(findTeam)
+
+  useEffect(() => {
+    if (props.props.news !== undefined) {
+      setIsLoading(false)
+    }
+  }, [props.props.news])
+
+  if (isLoading) {
+    return <div>Loading...</div>
+  }
   return (
     <div>
       <Head>
         <title>NBA-App</title>
         <link rel='icon' href='/app-logo/Logo-NBA.png' />
-        <meta
-          name='NBA-App'
-          content='Page of nba content'
-        />
+        <meta name='NBA-App' content='Page of nba content' />
       </Head>
       <NavBar teamName={teamSplited[teamSplited.length - 1]} />
       <TeamListBar />
@@ -72,5 +80,9 @@ DynamicPage.getInitialProps = async ({ query }) => {
     }
   } catch (error) {
     console.log(error)
+
+    return {
+      props: {}
+    }
   }
 }
