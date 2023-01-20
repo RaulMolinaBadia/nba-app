@@ -65,4 +65,6 @@ export const NewsFrame = styled.div`
   align-items: center;
   justify-content: center;
   align-content: center;
+  margin-top: 2rem;
+  font-size: 1.5rem;
 `
