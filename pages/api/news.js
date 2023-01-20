@@ -7,7 +7,7 @@ export default function handlerTeam (req, res) {
     'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
   }
 
-  axios.get('https://nba-latest-news.p.rapidapi.com/articles?source=nba', {
+  axios.get('https://nba-latest-news.p.rapidapi.com/articles', {
     method: 'GET',
     headers: headersList
   }).then(response => {
