@@ -9,7 +9,6 @@ import TeamsList from '../../public/nbaLogos'
 import NavBar from '../../components/NavBar'
 
 export default function DynamicPage (props) {
-  console.log(props)
   const router = useRouter()
   const { query } = router
   const teamSplited = (query.id).split(' ')
