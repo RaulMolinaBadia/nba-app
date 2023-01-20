@@ -13,7 +13,7 @@ export const TeamListBarWrapper = styled.div`
 
 export const Logo = styled.img`
     width: 3rem;
-    :hover {
+    &:hover {
         transform: scale(1.5);
     }
 `

@@ -41,25 +41,29 @@ export async function getStaticProps () {
     'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
     'X-RapidAPI-Key': 'e8079d9059mshaf2885320dead3bp16650ejsne54672d3a921'
   }
-  const response = await fetch('https://nba-latest-news.p.rapidapi.com/articles?source=nba', {
-    method: 'GET',
-    headers: headersList
-  })
-  const news = await response.json()
+  try {
+    const response = await fetch('https://nba-latest-news.p.rapidapi.com/articles?source=nba', {
+      method: 'GET',
+      headers: headersList
+    })
+    const news = await response.json()
 
-  const imagesUrls = []
-  const defaultImageUrl = 'defaultImage.jpg'
-  for (const newsItem of news) {
-    const imageUrl = await getImageUrl(newsItem.url)
-    if (imageUrl) {
-      imagesUrls.push(imageUrl)
-    } else {
-      imagesUrls.push(defaultImageUrl)
+    const imagesUrls = []
+    const defaultImageUrl = 'defaultImage.jpg'
+    for (const newsItem of news) {
+      const imageUrl = await getImageUrl(newsItem.url)
+      if (imageUrl) {
+        imagesUrls.push(imageUrl)
+      } else {
+        imagesUrls.push(defaultImageUrl)
+      }
     }
-  }
 
-  return {
-    props: { news, imagesUrls },
-    revalidate: 10 // rerun after 10 seconds
+    return {
+      props: { news, imagesUrls },
+      revalidate: 10 // rerun after 10 seconds
+    }
+  } catch (error) {
+    console.log(error)
   }
 }

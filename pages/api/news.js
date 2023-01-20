@@ -1,9 +1,16 @@
 import axios from 'axios'
 
-const urlPlayers = 'https://www.balldontlie.io/api/v1/players'
-
 export default function handlerTeam (req, res) {
-  axios.get(urlPlayers).then(response => {
+  const headersList = {
+    Accept: '*/*',
+    'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
+    'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
+  }
+
+  axios.get('https://nba-latest-news.p.rapidapi.com/articles?source=nba', {
+    method: 'GET',
+    headers: headersList
+  }).then(response => {
     res.status(200).json(response.data)
   })
 }
