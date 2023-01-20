@@ -13,7 +13,7 @@ export const TeamInfo = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 200px;
+    min-width: 15.625rem;
     height: 22rem;
     justify-content: center;
     margin: 2rem;

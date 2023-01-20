@@ -1,10 +1,13 @@
 import styled from '@emotion/styled'
 export const TeamSelectorContainer = styled.div`
-  width: 100%;
+  width: 20%;
   height: 89vh;
   display: flex;
   flex-direction: column;
-  alig-items: center;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 20rem;
+
 `
 
 export const Select = styled.select`

@@ -13,4 +13,5 @@ export const Header = styled.div`
 export const TeamName = styled.title`
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
 `

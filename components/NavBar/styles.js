@@ -44,4 +44,5 @@ export const ListMenuItem = styled.li`
     background-color: #ff00ff;
     color: #fff;
   }
+  margin-right: 0.9rem;
 `
