@@ -43,31 +43,29 @@ const Frame = props => {
             ? (
               <div>Recargar página</div>
               )
-            : (
-                props.news && props.news.length === 0
-                  ? (
-                    <NewsFrame>
-                      No hay noticias disponibles de los {props.teamName}
-                    </NewsFrame>
-                    )
-                  : (
-                      props.news.map((newsItem, i) => (
-                        <NewsFrame key={i}>
-                          <h1>{newsItem.title}</h1>
-                          <Link href={newsItem.url}>
-                            <ImageNews
-                              src={
+            : props.news && props.news.length === 0
+              ? (
+                <NewsFrame>
+                  No hay noticias disponibles de los {props.teamName}
+                </NewsFrame>
+                )
+              : (
+                  props.news.map((newsItem, i) => (
+                    <NewsFrame key={i}>
+                      <h1>{newsItem.title}</h1>
+                      <Link href={newsItem.url}>
+                        <ImageNews
+                          src={
                       props.imagesUrls[i] === 'defaultImage.jpg'
                         ? '/background-images/mjordan.png'
                         : props.imagesUrls[i]
                     }
-                              alt='newsImages'
-                            />
-                          </Link>
-                        </NewsFrame>
-                      ))
-                    )
-              )}
+                          alt='newsImages'
+                        />
+                      </Link>
+                    </NewsFrame>
+                  ))
+                )}
         </MidFrame>
 
         <RightFrame>

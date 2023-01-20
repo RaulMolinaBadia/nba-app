@@ -3,7 +3,7 @@ import axios from 'axios'
 
 const url = 'https://www.balldontlie.io/api/v1/teams'
 export default function handler (req, res) {
-  axios.get(url).then((response) => {
+  axios.get(url).then(response => {
     res.status(200).json(response.data)
   })
 }

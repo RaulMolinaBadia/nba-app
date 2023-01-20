@@ -11,18 +11,11 @@ export default function Home () {
       <Head>
         <title>NBA-App</title>
         <link rel='icon' href='/app-logo/Logo-NBA.png' />
-        <meta
-          name='NBA-App'
-          content='Page of nba content'
-        />
+        <meta name='NBA-App' content='Page of nba content' />
       </Head>
       <NavBar teamName='Logo-NBA' />
       <TeamListBar />
-      <Frame
-        teamName='NEWS'
-        news={[]}
-        imagesUrls={[]}
-      />
+      <Frame teamName='NEWS' news={[]} imagesUrls={[]} />
       <Footer />
     </div>
   )

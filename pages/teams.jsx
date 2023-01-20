@@ -7,7 +7,6 @@ import TeamInfoDisplayer from '../components/TeamInfoDisplayer'
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
 const Teams = (teams) => {
-  // TODO hay que configurar el teamName del logo de arriba a la derecha
   return (
     <div>
       <Head>

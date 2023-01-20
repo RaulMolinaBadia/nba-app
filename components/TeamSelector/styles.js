@@ -7,7 +7,6 @@ export const TeamSelectorContainer = styled.div`
   text-align: center;
   margin: 0 auto;
   margin-top: 20rem;
-
 `
 
 export const Select = styled.select`

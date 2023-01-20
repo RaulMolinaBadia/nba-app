@@ -9,7 +9,7 @@ import TeamsList from '../../public/nbaLogos'
 export default function News ({ id }) {
   const router = useRouter()
   const { query } = router
-  const teamSplited = (query.id).split(' ')
+  const teamSplited = query.id.split(' ')
   const findTeam = TeamsList.find(team => team.name === query.id)
   console.log(findTeam)
   return (
@@ -17,10 +17,7 @@ export default function News ({ id }) {
       <Head>
         <title>NBA-App</title>
         <link rel='icon' href='/app-logo/Logo-NBA.png' />
-        <meta
-          name='NBA-App'
-          content='Page of nba content'
-        />
+        <meta name='NBA-App' content='Page of nba content' />
       </Head>
       <NavBar teamName={teamSplited[teamSplited.length - 1]} />
       <TeamListBar />
