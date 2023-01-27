@@ -7,7 +7,6 @@ import TeamInfoDisplayer from '../components/TeamInfoDisplayer'
 const teamsURL = 'https://www.balldontlie.io/api/v1/teams'
 
 const Teams = (teams) => {
-  // TODO hay que configurar el teamName del logo de arriba a la derecha
   return (
     <div>
       <Head>
@@ -27,11 +26,15 @@ const Teams = (teams) => {
 export default Teams
 
 export async function getServerSideProps () {
-  const response = await fetch(teamsURL)
-  const teams = await response.json()
-  return {
-    props: {
-      teams
+  try {
+    const response = await fetch(teamsURL)
+    const teams = await response.json()
+    return {
+      props: {
+        teams
+      }
     }
+  } catch (error) {
+    console.log(error)
   }
 }

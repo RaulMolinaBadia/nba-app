@@ -5,11 +5,11 @@ export const useDataAPI = apiURL => {
 
   useEffect(() => {
     fetch(apiURL)
-      .then((response) => response.json())
-      .then((data) => {
+      .then(response => response.json())
+      .then(data => {
         setPost(data.data)
       })
-  }, [])
+  }, [!post])
 
   return post
 }

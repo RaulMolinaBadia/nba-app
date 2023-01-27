@@ -13,10 +13,7 @@ export default function LandingPage (teams) {
       <Head>
         <title>NBA-App</title>
         <link rel='icon' href='/app-logo/Logo-NBA.png' />
-        <meta
-          name='NBA-App'
-          content='Page of nba content'
-        />
+        <meta name='NBA-App' content='Page of nba content' />
       </Head>
       <NavBar teamName={teamName} />
       <TeamSelector setTeamName={setTeamName} teams={teams} />
@@ -25,11 +22,13 @@ export default function LandingPage (teams) {
 }
 
 export async function getServerSideProps () {
-  const response = await fetch(teamsURL)
-  const teams = await response.json()
-  return {
-    props: {
-      teams
+  try {
+    const response = await fetch(teamsURL)
+    const teams = await response.json()
+    return {
+      props: {
+        teams
+      }
     }
-  }
+  } catch (error) {}
 }

@@ -35,7 +35,7 @@ export const ListMenu = styled.ul`
   padding: 0;
   display: flex;
   gap: 5%;
-  `
+`
 
 export const ListMenuItem = styled.li`
   padding: 10px;

@@ -11,7 +11,7 @@ const Footer = () => {
         width={88}
         height={50}
       />
-      <p> Copyright 2023 &copy; By: Yerai & Raul</p>
+      <p data-testid='footerText'> Copyright 2023 &copy; By: Yerai & Raul</p>
     </FooterContainer>
   )
 }

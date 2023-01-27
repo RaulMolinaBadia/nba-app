@@ -13,18 +13,11 @@ export default function DynamicPage ({ id }) {
       <Head>
         <title>NBA-App</title>
         <link rel='icon' href='/app-logo/Logo-NBA.png' />
-        <meta
-          name='NBA-App'
-          content='Page of nba content'
-        />
+        <meta name='NBA-App' content='Page of nba content' />
       </Head>
       <NavBar teamLogo='Logo-NBA' />
       <TeamListBar />
-      <Frame
-        teamName={query.id}
-        news={[]}
-        imagesUrls={[]}
-      />
+      <Frame teamName={query.id} news={[]} imagesUrls={[]} />
       <Footer />
     </div>
   )

@@ -10,7 +10,7 @@ export const GeneralFrame = styled.div`
   align-items: center;
   padding-top: 20px;
   padding-bottom: 20px;
-  `
+`
 export const FrameWrapper = styled.div`
   display: flex;
   flex-direction: row;

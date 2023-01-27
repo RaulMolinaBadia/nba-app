@@ -24,7 +24,7 @@ const Frame = props => {
             )
           : (
             <Images
-              src={props.teamLogo || `/nba-logos/${props.teamName}-logo.png`}
+              src={props.teamLogo}
               width={70}
               height={70}
               alt='team logo'
@@ -39,29 +39,33 @@ const Frame = props => {
           <WesternLeaderboard />
         </LeftFrame>
         <MidFrame>
-          {props.news.length === 0
+          {props.news === undefined
             ? (
-              <NewsFrame>
-                No hay noticias disponibles de los {props.teamName}
-              </NewsFrame>
+              <div>Recargar página</div>
               )
-            : (
-                props.news.map((newsItem, i) => (
-                  <NewsFrame key={i}>
-                    <h1>{newsItem.title}</h1>
-                    <Link href={newsItem.url}>
-                      <ImageNews
-                        src={
+            : props.news && props.news.length === 0
+              ? (
+                <NewsFrame>
+                  No hay noticias disponibles de los {props.teamName}
+                </NewsFrame>
+                )
+              : (
+                  props.news.map((newsItem, i) => (
+                    <NewsFrame key={i}>
+                      <h1>{newsItem.title}</h1>
+                      <Link href={newsItem.url}>
+                        <ImageNews
+                          src={
                       props.imagesUrls[i] === 'defaultImage.jpg'
                         ? '/background-images/mjordan.png'
                         : props.imagesUrls[i]
                     }
-                        alt='newsImages'
-                      />
-                    </Link>
-                  </NewsFrame>
-                ))
-              )}
+                          alt='newsImages'
+                        />
+                      </Link>
+                    </NewsFrame>
+                  ))
+                )}
         </MidFrame>
 
         <RightFrame>
