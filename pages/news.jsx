@@ -32,7 +32,7 @@ export async function getStaticProps () {
   const headersList = {
     Accept: '*/*',
     'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
-    'X-RapidAPI-Key': 'e8079d9059mshaf2885320dead3bp16650ejsne54672d3a921'
+    'X-RapidAPI-Key': 'ed29ff5a2emsh01ed0acf66f0e2ap1e4afcjsne07b094f28ab'
   }
   try {
     const response = await fetch(

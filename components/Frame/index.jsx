@@ -13,6 +13,7 @@ import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
 import Link from 'next/link'
 import Images from 'next/image'
 import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
+import LoadingSpinner from '../LoadingSpinner'
 
 const Frame = props => {
   return (
@@ -41,7 +42,7 @@ const Frame = props => {
         <MidFrame>
           {props.news === undefined
             ? (
-              <div>Recargar página</div>
+              <LoadingSpinner />
               )
             : props.news && props.news.length === 0
               ? (

@@ -36,6 +36,7 @@ export default function DynamicPage (props) {
 }
 async function getImageUrl (url) {
   const { data } = await axios.get(url)
+  axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
   const $ = cheerio.load(data)
   return $('.ArticleContent_article__NBhQ8 img').attr('src')
 }
@@ -44,7 +45,7 @@ DynamicPage.getInitialProps = async ({ query }) => {
   const headersList = {
     Accept: '*/*',
     'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
-    'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
+    'X-RapidAPI-Key': 'ed29ff5a2emsh01ed0acf66f0e2ap1e4afcjsne07b094f28ab'
   }
   try {
     const response = await fetch(
@@ -55,6 +56,7 @@ DynamicPage.getInitialProps = async ({ query }) => {
       }
     )
     const news = await response.json()
+    console.log(news)
     const imagesUrls = []
     const defaultImageUrl = 'defaultImage.jpg'
     for (const newsItem of news) {

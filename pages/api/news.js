@@ -4,7 +4,7 @@ export default function handlerTeam (req, res) {
   const headersList = {
     Accept: '*/*',
     'User-Agent': 'Thunder Client (https://www.thunderclient.com)',
-    'X-RapidAPI-Key': '8acd110f16msh8ab908907b8a392p1b1f53jsn59199f328434'
+    'X-RapidAPI-Key': 'ed29ff5a2emsh01ed0acf66f0e2ap1e4afcjsne07b094f28ab'
   }
 
   axios
