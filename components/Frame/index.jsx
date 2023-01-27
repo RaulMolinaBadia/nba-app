@@ -5,7 +5,8 @@ import {
   LeftFrame,
   MidFrame,
   RightFrame,
-  ImageNews
+  ImageNews,
+  NewsFrame
 } from './styles'
 import { Header, TeamName } from './propStyles'
 import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
@@ -14,21 +15,22 @@ import Images from 'next/image'
 import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
 
 const Frame = props => {
-  console.log(props)
   return (
     <GeneralFrame>
       <Header>
         {props.teamName === 'NEWS'
           ? (
+            <div />
+            )
+          : (
             <Images
-              src='/app-logo/Logo-NBA.png'
+              src={props.teamLogo}
               width={70}
               height={70}
               alt='team logo'
+              priority
+              quality={100}
             />
-            )
-          : (
-            <Images src={props.teamLogo} width={70} height={70} alt='team logo' />
             )}
         <TeamName>{props.teamName}</TeamName>
       </Header>
@@ -37,22 +39,35 @@ const Frame = props => {
           <WesternLeaderboard />
         </LeftFrame>
         <MidFrame>
-          {props.news.map((newsItem, i) => (
-            <div key={i}>
-              <h1>{newsItem.title}</h1>
-              <Link href={newsItem.url}>
-                <ImageNews
-                  src={
-                    props.imagesUrls[i] === 'defaultImage.jpg'
-                      ? '/background-images/mjordan.png'
-                      : props.imagesUrls[i]
-                  }
-                  alt='newsImages'
-                />
-              </Link>
-            </div>
-          ))}
+          {props.news === undefined
+            ? (
+              <div>Recargar página</div>
+              )
+            : props.news && props.news.length === 0
+              ? (
+                <NewsFrame>
+                  No hay noticias disponibles de los {props.teamName}
+                </NewsFrame>
+                )
+              : (
+                  props.news.map((newsItem, i) => (
+                    <NewsFrame key={i}>
+                      <h1>{newsItem.title}</h1>
+                      <Link href={newsItem.url}>
+                        <ImageNews
+                          src={
+                      props.imagesUrls[i] === 'defaultImage.jpg'
+                        ? '/background-images/mjordan.png'
+                        : props.imagesUrls[i]
+                    }
+                          alt='newsImages'
+                        />
+                      </Link>
+                    </NewsFrame>
+                  ))
+                )}
         </MidFrame>
+
         <RightFrame>
           <EasternLeaderboard />
         </RightFrame>

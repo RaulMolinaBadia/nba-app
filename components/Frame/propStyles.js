@@ -1,28 +1,17 @@
 import styled from '@emotion/styled'
 
 export const Header = styled.div`
-    display: flex;
-    flex-direction: row;
-    margin-top: 1.5rem;
-    margin-left: 4rem;
-    margin-bottom: -3.75rem;
-    font-size: 2.5rem;
-    font-weight: bold;
-    `
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+`
 
-export const Logo = styled.img`
-    width: 5rem;
-    height: 5rem;
-    margin-right: 2rem;
-    `
-
-export const TeamName = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin-top: 1rem;
-    `
-
-export const NBALogo = styled.img`
-    width: 9rem;
-    height: 5rem;
+export const TeamName = styled.title`
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
 `

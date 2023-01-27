@@ -9,7 +9,9 @@ const TeamListBar = () => {
       {TeamsList.map((team) => (
         <div key={team.name}>
           <Link href={`/teams/${team.name}`}>
-            <Logo src={team.logo.src} alt={team.name} />
+            <Logo
+              src={team.logo.src} alt={team.name}
+            />
           </Link>
         </div>
       ))}
