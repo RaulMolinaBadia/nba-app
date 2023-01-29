@@ -1,9 +1,9 @@
 import Head from 'next/head'
 
 import Footer from '../components/Footer/index'
-import Frame from '../components/Frame'
 import TeamListBar from '../components/TeamListBar'
 import NavBar from '../components/NavBar/index'
+import ImageGallery from '../components/ImageGallery'
 
 export default function Home () {
   return (
@@ -15,7 +15,9 @@ export default function Home () {
       </Head>
       <NavBar teamName='Logo-NBA' />
       <TeamListBar />
-      <Frame teamName='NEWS' news={[]} imagesUrls={[]} />
+      <div>
+        <ImageGallery />
+      </div>
       <Footer />
     </div>
   )

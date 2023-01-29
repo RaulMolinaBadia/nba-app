@@ -16,44 +16,60 @@ export const FrameWrapper = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   width: 90%;
-  background-color: lightgray;
+  background-color: transparent;
   justify-content: center;
   margin-top: 1rem;
   margin-bottom: 2rem;
+  min-height: 795px;
 `
 export const LeftFrame = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: #2c2c2c;
   width: 25%;
-  min-width: 200px;
+  min-width: 226px;
   height: 63vh;
-  color: black;
-  overflow: scroll;
+  color: white;
   justify-content: center;
+  min-height: 795px;
+  @media (max-width: 1004px) {
+    order: 2;
+    width: 50%;
+  }
 `
 export const MidFrame = styled.div`
   display: flex;
   flex-direction: column;
   align-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #2c2c2c;
   width: 50%;
   min-width: 340px;
   height: 63vh;
+  min-height: 795px;
   color: black;
   overflow: scroll;
+  overflow-x: hidden;
+  border-top: 1px solid;
+  @media (max-width: 1004px) {
+    order: 1;
+    width: 100%
+  }
 `
 export const RightFrame = styled.div`
   display: flex;
   flex-direction: row;
-  background-color: white;
+  background-color: #2c2c2c;
   width: 25%;
-  min-width: 200px;
+  min-width: 213px;
   height: 63vh;
-  color: black;
-  overflow: scroll;
+  min-height: 795px;
+  color: white;
   justify-content: center;
+  @media (max-width: 1004px) {
+    order: 2;
+    width: 50%;
+  }
 `
 
 export const ImageNews = styled.img`
@@ -62,9 +78,12 @@ export const ImageNews = styled.img`
 export const NewsFrame = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
   margin-top: 2rem;
   font-size: 1.5rem;
+  text-align: center;
 `
+
+export const ImageNewsWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  `

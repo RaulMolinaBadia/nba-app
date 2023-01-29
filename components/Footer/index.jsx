@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <FooterContainer>
+    <FooterContainer className='FooterContainer'>
       <Image
         src='/app-logo/Logo-NBA.png'
         alt='NBA Logo'
