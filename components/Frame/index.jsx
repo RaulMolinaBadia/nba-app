@@ -6,7 +6,8 @@ import {
   MidFrame,
   RightFrame,
   ImageNews,
-  NewsFrame
+  NewsFrame,
+  ImageNewsWrapper
 } from './styles'
 import { Header, TeamName } from './propStyles'
 import WesternLeaderboard from '../Leaderboard/WesternLeaderboard'
@@ -16,8 +17,8 @@ import EasternLeaderboard from '../Leaderboard/EasternLeaderboard'
 
 const Frame = props => {
   return (
-    <GeneralFrame>
-      <Header>
+    <GeneralFrame className='GeneralFrame'>
+      <Header className='Header'>
         {props.teamName === 'NEWS'
           ? (
             <div />
@@ -32,43 +33,46 @@ const Frame = props => {
               quality={100}
             />
             )}
-        <TeamName>{props.teamName}</TeamName>
+        <TeamName className='TeamName'>{props.teamName}</TeamName>
       </Header>
-      <FrameWrapper>
-        <LeftFrame>
+      <FrameWrapper className='FrameWrapper'>
+        <LeftFrame className='LeftFrame'>
           <WesternLeaderboard />
         </LeftFrame>
-        <MidFrame>
+        <MidFrame className='MidFrame'>
           {props.news === undefined
             ? (
               <div>Recargar página</div>
               )
             : props.news && props.news.length === 0
               ? (
-                <NewsFrame>
+                <NewsFrame className='NewsFrame'>
                   No hay noticias disponibles de los {props.teamName}
                 </NewsFrame>
                 )
               : (
                   props.news.map((newsItem, i) => (
-                    <NewsFrame key={i}>
+                    <NewsFrame key={i} className='NewsFrame'>
                       <h1>{newsItem.title}</h1>
                       <Link href={newsItem.url}>
-                        <ImageNews
-                          src={
+                        <ImageNewsWrapper className='ImageNewsWrapper'>
+                          <ImageNews
+                            src={
                       props.imagesUrls[i] === 'defaultImage.jpg'
                         ? '/background-images/mjordan.png'
                         : props.imagesUrls[i]
                     }
-                          alt='newsImages'
-                        />
+                            alt='newsImages'
+                            className='ImageNews'
+                          />
+                        </ImageNewsWrapper>
                       </Link>
                     </NewsFrame>
                   ))
                 )}
         </MidFrame>
 
-        <RightFrame>
+        <RightFrame className='RightFrame'>
           <EasternLeaderboard />
         </RightFrame>
       </FrameWrapper>
