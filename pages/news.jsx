@@ -55,8 +55,8 @@ export async function getStaticProps () {
     }
 
     return {
-      props: { news, imagesUrls }
-      // revalidate: 10 // rerun after 10 seconds
+      props: { news, imagesUrls },
+      revalidate: 10 // rerun after 10 seconds
     }
   } catch (error) {
     console.log(error)
